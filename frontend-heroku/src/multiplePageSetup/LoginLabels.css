@@ -1,0 +1,92 @@
+.LoginLabels, .Register {
+    text-align: center;
+}
+
+.logo {
+
+}
+
+.title {
+    text-shadow: 1px 1px black;
+}
+
+.usernameLabel, .usernameText {
+    display: block;
+    color: white;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+
+.passwordLabel, .passwordText {
+    display: block;
+    color: white;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+
+.firstNameLabel, .firstNameText {
+    display: block;
+    color: white;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+
+.lastNameLabel, .lastNameText {
+    display: block;
+    color: white;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+
+.emailLabel, .emailText {
+    display: block;
+    color: white;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+
+.firstQuestionLabel, .firstQuestionText {
+    display: block;
+    color: white;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+
+.secondQuestionLabel, .secondQuestionText {
+    display: block;
+    color: white;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+
+.submitButton {
+    display: block;
+    width: 125px;
+    border: 1px solid grey;
+    background-color: white;
+    padding: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submitButton:hover {
+    background-color: lightgray;
+}
+
+.fbPic {
+    display: inline-block;
+    align-self: center;
+
+}
+
+.fbPic:hover, .ggPic:hover {
+    filter: grayscale(1);
+}
+
+.ggPic {
+    display: inline-block;
+    margin-left: 10px;
+    align-self: center;
+}
