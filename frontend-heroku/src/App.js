@@ -1,9 +1,10 @@
 import './App.css';
-import React from "react";
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import {Home, About, Login, Register } from "./multiplePageSetup";
+import React, {useEffect} from 'react';
 
 function App() {
+
   return (
       <div>
         <Router>

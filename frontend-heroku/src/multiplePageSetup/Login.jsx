@@ -2,7 +2,7 @@ import './LoginLabels.css'
 
 //js file for the username, password, create account button, facebook button, and google button.
 
-function LoginLabels() {
+function Login() {
     return (
         <body>
         <img className={"logo"} src="/photos/brainstorm%20logo%20cropped.png" height={125} alt={""}/>
@@ -22,7 +22,6 @@ function LoginLabels() {
             </label>
 
             <input className={"passwordInput"} type={"password"} id={"password"} />
-
             <input className={"submitButton"} type={"submit"} value={"Log in"} />
 
             <label htmlFor={"facebook"}>
@@ -38,4 +37,4 @@ function LoginLabels() {
     );
 }
 
-export default LoginLabels;
+export default Login;
