@@ -2,7 +2,7 @@
   "name": "P465Team12",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./frontend-heroku",
+  "homepage": "frontend-heroku/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
