@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import './Announcements.css'
+import AnmtList from "./AnmtList";
 
 function Announcements() {
 
-    const [anmt, setAnmt] = useState('empty');
-    const handlePost = () => {
-        console.log('whaddup bro');
-    }
+    const [anmt, setAnmt] = useState([
+        { title: 'announcement 1', body: 'lorem ipsum..', author: 'professor', id: 1}
+    ]);
 
     return (
         <div className={"mainContent"}>
-            hello input an announcement
+            <AnmtList anmts={anmt}/>
 
-            <input onChange={e => setAnmt(e.target.value)} />
-            <button onClick={() => {handlePost()}}> post announcement</button>
-
-            <p>{anmt}</p>
         </div>
     );
 }
