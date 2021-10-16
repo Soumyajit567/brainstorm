@@ -11,8 +11,8 @@ function Announcements() {
     return (
         <div className={"mainContent"}>
             <AnmtList anmts={anmt}/>
-
         </div>
     );
 }
+
 export default Announcements;
