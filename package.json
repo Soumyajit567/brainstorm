@@ -1,5 +1,5 @@
 {
-  "name": "frontend-heroku",
+  "name": "P465Team12",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts frontend-heroku/build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
