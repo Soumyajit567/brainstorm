@@ -14,6 +14,7 @@ function Announcements() {
 
             <input onChange={e => setAnmt(e.target.value)} />
             <button onClick={() => {handlePost()}}> post announcement</button>
+
             <p>{anmt}</p>
         </div>
     );
