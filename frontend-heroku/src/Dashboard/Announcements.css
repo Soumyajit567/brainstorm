@@ -1,0 +1,9 @@
+.mainContent{
+    background-color: lightgray;
+    border: 2px black solid;
+    margin-left: 20px;
+    margin-right: 150px;
+    margin-top: 20px;
+    padding-bottom: 40%;
+    text-align: center;
+}
