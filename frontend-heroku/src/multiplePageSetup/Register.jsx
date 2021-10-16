@@ -8,7 +8,7 @@ function Register() {
         <p className={"title"}>
             Register
         </p>
-        <form>
+        <form className={"loginForm"}>
 
             <label className={"usernameLabel"} htmlFor={"username"}>
                 Username:

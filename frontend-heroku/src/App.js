@@ -1,7 +1,8 @@
 import './App.css';
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import {Home, About, Login, Register } from "./multiplePageSetup";
-import React, {useEffect} from 'react';
+import React from 'react';
+import {StudentCalendar} from "./Dashboard";
 
 function App() {
 
@@ -23,6 +24,9 @@ function App() {
               <li>
                 <Link className={"headerLinks"} to="/register">Register</Link>
               </li>
+              <li>
+                <Link className={"headerLinks"} to="/studentcalendar">Calendar</Link>
+              </li>
             </ul>
             <nav />
             <Switch>
@@ -30,6 +34,7 @@ function App() {
               <Route path="/login" exact component={Login} />
               <Route path="/about" exact component={About} />
               <Route path="/register" exact component={Register} />
+              <Route path="/studentcalendar" exact component={StudentCalendar} />
 
             </Switch>
           </div>

@@ -19,3 +19,11 @@
   color: white;
   list-style-type: none;
 }
+
+body {
+  background-color: deepskyblue;
+}
+
+p{
+  text-align: center;
+}

@@ -9,30 +9,35 @@ function Login() {
         <p className={"title"}>
             Log In
         </p>
-        <form>
+        <div className={"loginForm"}>
+            <form>
 
-            <label className={"usernameLabel"} htmlFor={"username"}>
-                Username:
-            </label>
+                <label className={"usernameLabel"} htmlFor={"username"}>
+                    Username:
+                </label>
 
-            <input className={"usernameInput"} type={"text"} id={"username"} />
+                <input className={"usernameInput"} type={"text"} id={"username"} />
 
-            <label className={"passwordLabel"} htmlFor={"password"}>
-                Password:
-            </label>
+                <label className={"passwordLabel"} htmlFor={"password"}>
+                    Password:
+                </label>
 
-            <input className={"passwordInput"} type={"password"} id={"password"} />
-            <input className={"submitButton"} type={"submit"} value={"Log in"} />
+                <input className={"passwordInput"} type={"password"} id={"password"} />
+                <input className={"submitButton"} type={"submit"} value={"Log in"} />
 
-            <label htmlFor={"facebook"}>
-                <img className={"fbPic"}  src="/photos/facebook_sign_in.png" height={50} alt="submit"/>
-            </label>
+                <a className={"forgot"} href={"login"}>Forgot Password?</a>
 
-            <label htmlFor={"google"}>
-                <img className={"ggPic"} src="/photos/google_sign_in.png" height={50} alt="submit"/>
-            </label>
+                <label htmlFor={"facebook"}>
+                    <img className={"fbPic"}  src="/photos/facebook_sign_in.png" height={50} alt="submit"/>
+                </label>
 
-        </form>
+                <label htmlFor={"google"}>
+                    <img className={"ggPic"} src="/photos/google_sign_in.png" height={50} alt="submit"/>
+                </label>
+
+            </form>
+        </div>
+
         </body>
     );
 }

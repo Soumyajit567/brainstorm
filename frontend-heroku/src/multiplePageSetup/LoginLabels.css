@@ -2,12 +2,21 @@
     text-align: center;
 }
 
-.logo {
 
+p {
+    font-size: 20px;
+    text-shadow: 1px 1px black;
 }
 
 .title {
-    text-shadow: 1px 1px black;
+    text-align: center;
+    text-shadow: 1px 1px black
+}
+
+.loginForm {
+    width: 20%;
+    margin: auto;
+    text-align: center;
 }
 
 .usernameLabel, .usernameText {
@@ -75,9 +84,12 @@
     background-color: lightgray;
 }
 
+.forgot{
+    display: block;
+    margin-bottom: 10px;
+}
+
 .fbPic {
-    display: inline-block;
-    align-self: center;
 
 }
 
@@ -86,7 +98,4 @@
 }
 
 .ggPic {
-    display: inline-block;
-    margin-left: 10px;
-    align-self: center;
 }

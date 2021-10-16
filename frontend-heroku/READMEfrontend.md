@@ -23,3 +23,7 @@ In terminal
 1st. "git add ."
 2nd. "git commit -m "your message here""
 3rd. "git push heroku <yourbranchname>:main"
+
+You may need to install the Package used for the Calendar
+In terminal 
+1st. "npm i react-calendar"
