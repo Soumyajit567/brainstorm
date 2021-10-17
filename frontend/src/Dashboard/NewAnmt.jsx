@@ -7,6 +7,7 @@ const NewAnmt = (props) => {
     const [content, setContent] = useState('');
     const [author, setAuthor] = useState('');
 
+    /*
     //creates a new announcement
     const createAnmt = (e) => {
         e.preventDefault();
@@ -22,6 +23,7 @@ const NewAnmt = (props) => {
         })
 
     }
+*/
 
     //returns the inputs for creating a new announcement
     return(

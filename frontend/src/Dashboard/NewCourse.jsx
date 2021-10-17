@@ -8,6 +8,7 @@ const NewCourse = (props) => {
     const [content, setContent] = useState('');
     const [prof, setProf] = useState('');
 
+    /*
     //creates a new course
     const createCourse = (e) => {
         e.preventDefault();
@@ -23,7 +24,7 @@ const NewCourse = (props) => {
         })
 
     }
-
+*/
     //returns the inputs for creating a new announcement
     return(
         <div className={"newCourse"}>

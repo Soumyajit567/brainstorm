@@ -1,5 +1,6 @@
 const AnmtList = ({announcements, newAnmt, setNewAnmt}) => {
 
+    /*
     //deletes the announcement from the database.json
     const deleteAnmt= (e) => {
         fetch('http://localhost:8000/anmts/' + e, {
@@ -9,7 +10,7 @@ const AnmtList = ({announcements, newAnmt, setNewAnmt}) => {
             console.log("deleted an announcement")
         })
     }
-
+*/
     //returns the announcement lists
     return (
         <div className="anmt-list">

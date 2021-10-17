@@ -12,6 +12,7 @@ const Announcements = () => {
         setNewAnmt(true);
     };
 
+    /*
     //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
@@ -23,6 +24,7 @@ const Announcements = () => {
                 setAnmt(data)
             })
     }, [newAnmt]);
+*/
 
     return (
 

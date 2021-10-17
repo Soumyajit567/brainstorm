@@ -1,5 +1,5 @@
 const CourseList = ({courses, newCourse, setNewCourse}) => {
-
+/*
     const deleteCourse= (e) => {
         fetch('http://localhost:8000/courses/' + e, {
             method: 'DELETE'
@@ -8,7 +8,7 @@ const CourseList = ({courses, newCourse, setNewCourse}) => {
             console.log("deleted a course")
         })
     }
-
+*/
     return (
         <div className="course-list">
             {courses.map((course) => (

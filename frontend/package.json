@@ -16,7 +16,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "concurrently\"npx json-server --watch DataStorage/database.json --port 8000",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
