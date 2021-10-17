@@ -14,6 +14,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "heroku-prebuild": "npx json-server --watch DataStorage/database.json --port 8000",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
