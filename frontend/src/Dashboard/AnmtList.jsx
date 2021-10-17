@@ -21,7 +21,7 @@ const AnmtList = ({announcements, newAnmt, setNewAnmt}) => {
                         {anmts.content}
                     </div>
                     <p className={"writtenBy"}>Written by {anmts.author}</p>
-                    <button className={"deleteAnmt"} onClick={() => (deleteAnmt(anmts.id))}> Delete Announcement </button>
+                    <button className={"deleteAnmt"} /*onClick={() => (deleteAnmt(anmts.id))}*/> Delete Announcement </button>
                 </div>
             ))}
         </div>

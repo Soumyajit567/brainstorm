@@ -29,7 +29,7 @@ const NewCourse = (props) => {
     return(
         <div className={"newCourse"}>
             <h1 className={"courseHeader"}> Create New Course </h1>
-            <form onSubmit={createCourse}>
+            <form /*onSubmit={createCourse}*/>
                 <label className={"courseInputs"}> Course Title: </label>
                 <input
                     type={"text"}

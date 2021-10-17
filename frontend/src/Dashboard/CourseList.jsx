@@ -19,7 +19,7 @@ const CourseList = ({courses, newCourse, setNewCourse}) => {
                         {course.content}
                     </div>
                     <p className={"createdBy"}>Created by Course Instructor {course.prof}</p>
-                    <button className={"deleteCourse"} onClick={() => (deleteCourse(course.id))}> Delete Course </button>
+                    <button className={"deleteCourse"} /*onClick={() => (deleteCourse(course.id))}*/> Delete Course </button>
                 </div>
             ))}
         </div>

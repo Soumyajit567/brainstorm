@@ -29,7 +29,7 @@ const NewAnmt = (props) => {
     return(
         <div className={"newAnnouncement"}>
             <h1 className={"anmtHeader"}> Create New Announcement </h1>
-            <form onSubmit={createAnmt}>
+            <form /*onSubmit={createAnmt}*/>
                 <label className={"anmtInputs"}> Announcement Title: </label>
                 <input
                     type={"text"}
