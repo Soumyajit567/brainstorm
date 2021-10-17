@@ -1,5 +1,5 @@
 .mainContent{
-    background-color: lightgray;
+    background-color: lightsteelblue;
     border: 2px black solid;
     margin-left: 20px;
     margin-right: 150px;
@@ -8,59 +8,58 @@
     text-align: center;
 }
 
-.anmt-preview {
+.newCourse {
+    max-width: 1500px;
+    margin: auto;
+}
+
+.courseHeader {
+    margin-bottom: 30px;
+}
+
+.courseInputs {
+    margin-top: 10px;
+}
+
+.course-preview {
     background-color: lightblue;
     margin: 20px 0;
     border: 1px solid white;
 }
 
-.anmt-preview:hover {
+.course-preview:hover {
     box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
- }
+}
 
-.anmt-preview h2 {
+.course-preview h2 {
     font-size: 20px;
-    color: blue;
     margin-bottom: 8px;
 }
 
-.newAnnouncement {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.anmtHeader {
-    margin-bottom: 30px;
-}
-
-.anmtInputs {
-    margin-top: 10px;
-}
-
-.anmtTitle{
+.courseTitle {
     margin-top: 30px;
+    color: blue;
 }
 
-.amntNumber {
+.courseNumber {
     font-style: normal;
     color: blue;
 }
 
-.amntContent {
+.courseContent {
     text-align: left;
     font-size: 150%;
     margin-left: 25px;
     margin-right: 25px;
 }
 
-.createAnmt {
-    margin-top: 10px;
-}
-
-.deleteAnmt {
+.deleteCourse {
     margin-bottom: 10px;
 }
 
+.createCourse {
+    margin-top: 10px;
+}
 
 label {
     display: block;
@@ -79,4 +78,3 @@ input, textarea {
     box-sizing: border-box;
     display: block;
 }
-

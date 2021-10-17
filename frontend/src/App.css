@@ -8,11 +8,18 @@
 
 .NavLinksContainer {
   border: 2px solid black;
-  background-color: darkslategrey;
+  background-color: steelblue;
   color: black;
   list-style-type: none;
   padding: 3px;
   float: right;
+  text-align: left;
+}
+
+li {
+
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .headerLinks {
@@ -22,8 +29,4 @@
 
 body {
   background-color: deepskyblue;
-}
-
-p{
-  text-align: center;
 }

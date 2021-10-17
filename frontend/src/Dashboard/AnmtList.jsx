@@ -1,7 +1,6 @@
 const AnmtList = ({announcements, newAnmt, setNewAnmt}) => {
 
-
-
+    //deletes the announcement from the database.json
     const deleteAnmt= (e) => {
         fetch('http://localhost:8000/anmts/' + e, {
             method: 'DELETE'
@@ -11,16 +10,17 @@ const AnmtList = ({announcements, newAnmt, setNewAnmt}) => {
         })
     }
 
+    //returns the announcement lists
     return (
         <div className="anmt-list">
             {announcements.map((anmts) => (
                 <div className={"anmt-preview"} key={anmts.id}>
-                    <h2>{ anmts.title }</h2>
-                    <div>
+                    <h2 className={"amntTitle"}>{ anmts.title }</h2>
+                    <div className={"amntContent"}>
                         {anmts.content}
                     </div>
-                    <p>Written by {anmts.author}</p>
-                    <button onClick={() => (deleteAnmt(anmts.id))}> Delete Announcement </button>
+                    <p className={"writtenBy"}>Written by {anmts.author}</p>
+                    <button className={"deleteAnmt"} onClick={() => (deleteAnmt(anmts.id))}> Delete Announcement </button>
                 </div>
             ))}
         </div>

@@ -24,18 +24,9 @@ const Announcements = () => {
             })
     }, [newAnmt]);
 
-    //deletes announcement
-   /*
-    useEffect(()=> {
-        console.log('delete announcement')
-    });
-*/
-
-
-
     return (
 
-        //outputs announcements
+        //calls anmt list to display announcements
         <div className={"mainContent"}>
             <div>
                 <NewAnmt newAnmt={newAnmt} setNewAnmt={setNewAnmt}/>

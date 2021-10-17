@@ -26,28 +26,28 @@ const NewAnmt = (props) => {
     //returns the inputs for creating a new announcement
     return(
         <div className={"newAnnouncement"}>
-            <h1> Create New Announcement </h1>
+            <h1 className={"anmtHeader"}> Create New Announcement </h1>
             <form onSubmit={createAnmt}>
-                <label> Announcement Title: </label>
+                <label className={"anmtInputs"}> Announcement Title: </label>
                 <input
                     type={"text"}
                     required
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}/>
-                <label> Announcement Content: </label>
+                <label className={"anmtInputs"}> Announcement Content: </label>
                 <textarea
                     required
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
-                <label> Announcement Author: </label>
+                <label className={"anmtInputs"}> Announcement Author: </label>
                 <input
                     type={"text"}
                     required
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
                 />
-                <button> Create Announcement </button>
+                <button className={"createAnmt"}> Create Announcement </button>
             </form>
         </div>
     );

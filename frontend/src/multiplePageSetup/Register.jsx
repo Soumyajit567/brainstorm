@@ -5,7 +5,7 @@ function Register() {
     return (
         <body>
         <img className={"logo"} src="/photos/brainstorm%20logo%20cropped.png" height={125} alt={""}/>
-        <p className={"title"}>
+        <p className={"header"}>
             Register
         </p>
         <form className={"loginForm"}>

@@ -6,9 +6,7 @@ function Login() {
     return (
         <body>
         <img className={"logo"} src="/photos/brainstorm%20logo%20cropped.png" height={125} alt={""}/>
-        <p className={"title"}>
-            Log In
-        </p>
+        <p className={"header"}>Log In</p>
         <div className={"loginForm"}>
             <form>
 
