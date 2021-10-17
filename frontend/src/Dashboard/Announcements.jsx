@@ -41,7 +41,7 @@ const Announcements = () => {
                 <NewAnmt newAnmt={newAnmt} setNewAnmt={setNewAnmt}/>
                 <h1> All Announcements </h1>
             </div>
-            {anmt && <AnmtList announcements={anmt}/>}
+            {anmt && <AnmtList announcements={anmt} newAnmt={newAnmt} setNewAnmt={setNewAnmt}/>}
         </div>
     );
 }

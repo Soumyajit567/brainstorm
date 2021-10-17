@@ -1,9 +1,16 @@
-const AnmtList = ({announcements}) => {
-/*
-    const deleteAnmt= () => {
-        fetch('http://localhost:8000/anmts', + announcements.id)
+const AnmtList = ({announcements, newAnmt, setNewAnmt}) => {
+
+
+
+    const deleteAnmt= (e) => {
+        fetch('http://localhost:8000/anmts/' + e, {
+            method: 'DELETE'
+        }).then(() => {
+            setNewAnmt(!newAnmt)
+            console.log("deleted an announcement")
+        })
     }
-*/
+
     return (
         <div className="anmt-list">
             {announcements.map((anmts) => (
@@ -13,7 +20,7 @@ const AnmtList = ({announcements}) => {
                         {anmts.content}
                     </div>
                     <p>Written by {anmts.author}</p>
-                    <button > Delete Announcement </button>
+                    <button onClick={() => (deleteAnmt(anmts.id))}> Delete Announcement </button>
                 </div>
             ))}
         </div>
