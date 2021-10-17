@@ -24,6 +24,11 @@ In terminal
 2nd. "git commit -m "your message here""
 3rd. "git push heroku <yourbranchname>:main"
 
+For seeing heroku builds
+In terminal
+1st. "heroku plugins:install heroku-builds"
+2nd. "heroku builds"
+
 You may need to install the Package used for the Calendar
 In terminal 
 1st. "npm i react-calendar"
