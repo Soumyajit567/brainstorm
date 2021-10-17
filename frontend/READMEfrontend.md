@@ -34,7 +34,12 @@ In terminal
 1st. "npm i react-calendar"
 
 For testing announcements you must run a json server.
+In Terminal
 npx json-server --watch DataStorage/database.json --port 8000
+
+To have announcment/courses functionality you must install concurrently
+In Terminal
+"npm i concurrently"
 
 endpoints for database
 /anmts GET Fetch all Anmts
