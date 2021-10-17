@@ -1,15 +1,19 @@
-const AnmtList = (props) => {
-
-    const anmts = props.anmts;
-
+const AnmtList = ({announcements}) => {
+/*
+    const deleteAnmt= () => {
+        fetch('http://localhost:8000/anmts', + announcements.id)
+    }
+*/
     return (
         <div className="anmt-list">
-            <h1> All Announcements </h1>
-            {anmts.map((anmt) => (
-                <div className={"anmt-preview"} key={anmt.id}>
-                    <h2>{ anmt.title }</h2>
-                    <p>Written by {anmt.author}</p>
-                    <button> onClick=(() => removeAnmt(set} Remove Announcement</button>
+            {announcements.map((anmts) => (
+                <div className={"anmt-preview"} key={anmts.id}>
+                    <h2>{ anmts.title }</h2>
+                    <div>
+                        {anmts.content}
+                    </div>
+                    <p>Written by {anmts.author}</p>
+                    <button > Delete Announcement </button>
                 </div>
             ))}
         </div>

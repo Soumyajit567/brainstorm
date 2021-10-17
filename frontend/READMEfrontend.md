@@ -27,3 +27,12 @@ In terminal
 You may need to install the Package used for the Calendar
 In terminal 
 1st. "npm i react-calendar"
+
+For testing announcements you must run a json server.
+npx json-server --watch DataStorage/database.json --port 8000
+
+endpoints for database
+/anmts GET Fetch all Anmts
+/anmts POST Add a new Anmt
+/anmts/{id} Get Fetch a single Anmt
+/anmts/{id} Delete an Anmt

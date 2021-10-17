@@ -1,16 +1,47 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Announcements.css'
 import AnmtList from "./AnmtList";
+import NewAnmt from "./NewAnmt";
 
-function Announcements() {
+const Announcements = () => {
 
-    const [anmt, setAnmt] = useState([
-        { title: 'announcement 1', body: 'lorem ipsum..', author: 'professor', id: 1}
-    ]);
+    const [anmt, setAnmt] = useState(null);
+    const [newAnmt, setNewAnmt] = useState(false);
+
+    const updateAnmts = () => {
+        setNewAnmt(true);
+    };
+
+    //fetches data on the first render
+    useEffect(()=> {
+        console.log('use effect has occurred');
+        fetch('http://localhost:8000/anmts').then(response => {
+            return response.json();
+        })
+            .then((data) => {
+                console.log(data)
+                setAnmt(data)
+            })
+    }, [newAnmt]);
+
+    //deletes announcement
+   /*
+    useEffect(()=> {
+        console.log('delete announcement')
+    });
+*/
+
+
 
     return (
+
+        //outputs announcements
         <div className={"mainContent"}>
-            <AnmtList anmts={anmt}/>
+            <div>
+                <NewAnmt newAnmt={newAnmt} setNewAnmt={setNewAnmt}/>
+                <h1> All Announcements </h1>
+            </div>
+            {anmt && <AnmtList announcements={anmt}/>}
         </div>
     );
 }

@@ -11,15 +11,39 @@
 .anmt-preview {
     padding: 10px;
     margin: 20px 0;
-    border-bottom: 1px solid white;
+    border: 1px solid white;
 }
 
 .anmt-preview:hover {
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
  }
 
- .anmt-preview h2 {
-     font-size: 20px;
-     color: blue;
-     margin-bottom: 8px;
- }
+.anmt-preview h2 {
+    font-size: 20px;
+    color: blue;
+    margin-bottom: 8px;
+}
+
+.newAnnouncement {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+}
+
+h1 {
+    font-size: 25px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: 50%;
+    margin: auto;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: block;
+}
+
