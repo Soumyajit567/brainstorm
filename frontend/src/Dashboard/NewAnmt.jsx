@@ -7,7 +7,7 @@ const NewAnmt = (props) => {
     const [content, setContent] = useState('');
     const [author, setAuthor] = useState('');
 
-    /*
+
     //creates a new announcement
     const createAnmt = (e) => {
         e.preventDefault();
@@ -23,13 +23,13 @@ const NewAnmt = (props) => {
         })
 
     }
-*/
+
 
     //returns the inputs for creating a new announcement
     return(
         <div className={"newAnnouncement"}>
             <h1 className={"anmtHeader"}> Create New Announcement </h1>
-            <form /*onSubmit={createAnmt}*/>
+            <form onSubmit={createAnmt}>
                 <label className={"anmtInputs"}> Announcement Title: </label>
                 <input
                     type={"text"}

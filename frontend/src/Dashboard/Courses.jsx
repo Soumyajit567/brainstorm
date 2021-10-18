@@ -8,11 +8,12 @@ const Courses = () => {
     const [course, setCourse] = useState(null);
     const [newCourse, setNewCourse] = useState(false);
 
+    //tells useEffect to rerender when a new course has been added
     const updateCourses = () => {
         setNewCourse(true);
     };
 
-    /*
+
     //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
@@ -24,10 +25,10 @@ const Courses = () => {
                 setCourse(data)
             })
     }, [newCourse]);
-*/
+
     return (
 
-        //outputs announcements
+        //outputs courses
         <div className={"mainContent"}>
             <div>
                 <NewCourse newCourse={newCourse} setNewCourse={setNewCourse}/>
