@@ -2,7 +2,7 @@ import './App.css';
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import {Home, About, Login, Register } from "./multiplePageSetup";
 import React from 'react';
-import {Announcements, StudentCalendar, Courses, User} from "./Dashboard";
+import {Announcements, StudentCalendar, Courses, User, Instructors} from "./Dashboard";
 
 function App() {
 
@@ -36,6 +36,9 @@ function App() {
               <li>
                 <Link className={"headerLinks"} to="/user">Users</Link>
               </li>
+              <li>
+                <Link className={"headerLinks"} to="/instructors">Instructors</Link>
+              </li>
             </ul>
             <nav />
             <Switch>
@@ -47,6 +50,7 @@ function App() {
               <Route path="/studentcalendar" exact component={StudentCalendar} />
               <Route path="/announcements" exact component={Announcements} />
               <Route path="/user" exact component={User} />
+              <Route path="/instructors" exact component={Instructors} />
             </Switch>
           </div>
         </Router>

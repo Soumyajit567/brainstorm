@@ -1,4 +1,4 @@
-import './Courses.css'
+import './User.css'
 import { useState} from "react";
 
 const NewUser = (props) => {
@@ -25,29 +25,29 @@ const NewUser = (props) => {
 
     //returns the inputs for creating a new announcement
     return(
-        <div className={"newCourse"}>
-            <h1 className={"courseHeader"}> Create New User </h1>
+        <div className={"newUser"}>
+            <h1 className={"usersHeader"}> Create New User </h1>
             <form onSubmit={createUser}>
-                <label className={"courseInputs"}> Username: </label>
+                <label className={"userInputs"}> Username: </label>
                 <input
                     type={"text"}
                     required
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}/>
-                <label className={"courseInputs"}> User email: </label>
+                <label className={"userInputs"}> User email: </label>
                 <input
                     type={"text"}
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}/>
-                <label className={"courseInputs"}> User Content: </label>
+                <label className={"userInputs"}> User Content: </label>
                 <textarea
                     required
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
-                <label className={"courseInputs"}> Course Instructor: </label>
-                <button className={"createCourse"}> Create User </button>
+                <label className={"userInputs"}> Course Instructor: </label>
+                <button className={"createUser"}> Create User </button>
             </form>
         </div>
     );

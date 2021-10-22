@@ -13,10 +13,10 @@ const UserList = ({users, newUser, setNewUser}) => {
     return (
         <div className="course-list">
             {users.map((users) => (
-                <div className={"course-preview"} key={users.id}>
-                    <h2 className={"courseTitle"}>{ users.username }</h2>
-                    <h3 className={"courseNumber"}>{ users.emailAddress }</h3>
-                    <div className={"courseContent"}>
+                <div className={"user-preview"} key={users.id}>
+                    <h2 className={"userTitle"}>{ users.username }</h2>
+                    <h3 className={"userNumber"}>{ users.emailAddress }</h3>
+                    <div className={"userContent"}>
                         {users.content}
                     </div>
                     <button className={"deleteUser"} onClick={() => (deleteUser(users.id))}> Delete User </button>
