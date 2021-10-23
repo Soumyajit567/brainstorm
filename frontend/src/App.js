@@ -10,7 +10,7 @@ function App() {
       <div>
         <Router>
           <div>
-            <nav />
+            <nav/>
             <ul className={"NavLinksContainer"}>
               <li>
                 <Link className={"headerLinks"} to="/"> Home</Link>
@@ -40,7 +40,7 @@ function App() {
                 <Link className={"headerLinks"} to="/instructors">Instructors</Link>
               </li>
             </ul>
-            <nav />
+            <nav/>
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/about" exact component={About} />

@@ -1,8 +1,14 @@
 import './LoginLabels.css'
+import { BrowserRouter as Router, Link, Route, Switch, useHistory} from "react-router-dom";
+import ResetPage from "./ResetPage";
+import React from "react";
 
 //js file for the username, password, create account button, facebook button, and google button.
 
 function Login() {
+    const history = useHistory();
+    const goReset = () => history.push('/resetpage');
+
     return (
         <body>
             <img className={"logo"} src="/photos/brainstorm%20logo%20cropped.png" height={125} alt={""}/>
@@ -22,8 +28,16 @@ function Login() {
 
                     <input className={"passwordInput"} type={"password"} id={"password"} />
                     <input className={"submitButton"} type={"submit"} value={"Log in"} />
-
-                    <a className={"forgot"} href={"login"}>Forgot Password?</a>
+                    <Router>
+                        <nav />
+                        <Link to={"/resetpage"} >
+                            Reset Password
+                        </Link>
+                        <Switch>
+                            <Route path="/resetpage" exact component={ResetPage}/>
+                        </Switch>
+                        <nav />
+                    </Router>
 
                     <label htmlFor={"facebook"}>
                         <img className={"fbPic"}  src="/photos/facebook_sign_in.png" height={50} alt="submit"/>
@@ -32,11 +46,25 @@ function Login() {
                     <label htmlFor={"google"}>
                         <img className={"ggPic"} src="/photos/google_sign_in.png" height={50} alt="submit"/>
                     </label>
-
                 </form>
             </div>
         </body>
+
     );
 }
 
 export default Login;
+
+/*
+this takes us to a new page localhost:3000/resetpage, but doesn't show the component.
+                <Router>
+                    <nav />
+                    <Link to={"/resetpage"} onClick={() => (goReset())}>
+                        Reset Password
+                    </Link>
+                    <Switch>
+                        <Route path="/resetpage" exact component={ResetPage}/>
+                    </Switch>
+                    <nav />
+                </Router>
+*/
