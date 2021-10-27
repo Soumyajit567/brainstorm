@@ -2,7 +2,7 @@
 const UserList = ({users, newUser, setNewUser}) => {
 
     const deleteUser= (e) => {
-        fetch('http://localhost:8000/users' + e, {
+        fetch('http://localhost:8000/users/' + e, {
             method: 'DELETE'
         }).then(() => {
             setNewUser(!newUser)
@@ -12,14 +12,14 @@ const UserList = ({users, newUser, setNewUser}) => {
 
     return (
         <div className="course-list">
-            {users.map((users) => (
-                <div className={"user-preview"} key={users.id}>
-                    <h2 className={"userTitle"}>{ users.username }</h2>
-                    <h3 className={"userNumber"}>{ users.emailAddress }</h3>
+            {users.map((user) => (
+                <div className={"user-preview"} key={user.id}>
+                    <h2 className={"userTitle"}>{ user.username }</h2>
+                    <h3 className={"userNumber"}>{ user.email }</h3>
                     <div className={"userContent"}>
-                        {users.content}
+                        {user.content}
                     </div>
-                    <button className={"deleteUser"} onClick={() => (deleteUser(users.id))}> Delete User </button>
+                    <button className={"deleteUser"} onClick={() => (deleteUser(user.id))}> Delete User </button>
                 </div>
             ))}
         </div>

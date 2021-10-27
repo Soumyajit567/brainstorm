@@ -33,7 +33,7 @@ You may need to install the Package used for the Calendar
 In terminal 
 1st. "npm i react-calendar"
 
-For testing announcements you must run a json server.
+For testing announcements, courses, instructors, etc you must run a json server.
 In Terminal
 npx json-server --watch DataStorage/database.json --port 8000
 
