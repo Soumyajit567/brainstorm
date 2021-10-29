@@ -1,4 +1,3 @@
-
 const UserList = ({users, newUser, setNewUser}) => {
 
     const deleteUser= (e) => {

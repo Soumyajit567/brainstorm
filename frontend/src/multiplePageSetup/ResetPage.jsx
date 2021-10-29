@@ -5,8 +5,6 @@ import React from "react";
 
 function ResetPage() {
 
-
-
     return (
         <body>
             <div className={"reset"}>

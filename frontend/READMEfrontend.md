@@ -37,7 +37,7 @@ For testing announcements, courses, instructors, etc you must run a json server.
 In Terminal
 npx json-server --watch DataStorage/database.json --port 8000
 
-To have announcment/courses functionality you must install concurrently
+To have announcement/courses functionality you must install concurrently
 In Terminal
 "npm i concurrently"
 

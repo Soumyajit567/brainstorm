@@ -1,13 +1,18 @@
 import './LoginLabels.css'
 import { BrowserRouter as Router, Link, Route, Switch, useHistory} from "react-router-dom";
 import ResetPage from "./ResetPage";
-import React from "react";
+import React, {useState} from "react";
 
 //js file for the username, password, create account button, facebook button, and google button.
 
 function Login() {
     const history = useHistory();
-    const goReset = () => history.push('/resetpage');
+    //const goReset = () => history.push('/resetpage');
+    const [reset, setReset] = useState(false);
+
+    function showReset() {
+        setReset(view => !view);
+    }
 
     return (
         <body>
@@ -27,17 +32,14 @@ function Login() {
                     </label>
 
                     <input className={"passwordInput"} type={"password"} id={"password"} />
+
                     <input className={"submitButton"} type={"submit"} value={"Log in"} />
-                    <Router>
-                        <nav />
-                        <Link to={"/resetpage"} >
-                            Reset Password
-                        </Link>
-                        <Switch>
-                            <Route path="/resetpage" exact component={ResetPage}/>
-                        </Switch>
-                        <nav />
-                    </Router>
+                    <Link onClick={() => (showReset())}>
+                        Reset Password
+                    </Link>
+                    {
+                        reset && (<ResetPage/>)
+                    }
 
                     <label htmlFor={"facebook"}>
                         <img className={"fbPic"}  src="/photos/facebook_sign_in.png" height={50} alt="submit"/>
@@ -49,7 +51,6 @@ function Login() {
                 </form>
             </div>
         </body>
-
     );
 }
 
@@ -67,4 +68,16 @@ this takes us to a new page localhost:3000/resetpage, but doesn't show the compo
                     </Switch>
                     <nav />
                 </Router>
+
+
+                <Router>
+                        <nav />
+                        <Link to={"/resetpage"} >
+                            Reset Password
+                        </Link>
+                        <Switch>
+                            <Route path="/resetpage" exact component={ResetPage}/>
+                        </Switch>
+                        <nav />
+                    </Router>
 */

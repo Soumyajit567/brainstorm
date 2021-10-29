@@ -8,5 +8,21 @@
     }
   ],
   "courses": [],
-  "users": []
+  "users": [
+    {
+      "username": "asdf",
+      "email": "asdf",
+      "content": "asdf",
+      "id": 1
+    }
+  ],
+  "instrs": [
+    {
+      "instrName": "armand",
+      "instrNum": "1234",
+      "content": "as;dlkjas;ldfj",
+      "prof": "allie",
+      "id": 1
+    }
+  ]
 }

@@ -14,7 +14,7 @@ const NewInstructor = (props) => {
         e.preventDefault();
         const instr = {instrName, instrNum, content, prof};
 
-        fetch('http://localhost:8000/instr', {
+        fetch('http://localhost:8000/instrs/', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(instr)

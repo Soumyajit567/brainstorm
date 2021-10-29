@@ -17,7 +17,7 @@ const Instructors = () => {
     //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
-        fetch('http://localhost:8000/instr').then(response => {
+        fetch('http://localhost:8000/instrs').then(response => {
             return response.json();
         })
             .then((data) => {
