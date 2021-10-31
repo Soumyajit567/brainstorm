@@ -1,5 +1,5 @@
 const CourseList = ({courses, newCourse, setNewCourse}) => {
-
+/*
     //deletes courses from database
     const deleteCourse= (e) => {
         fetch('http://localhost:8000/courses/' + e, {
@@ -9,7 +9,7 @@ const CourseList = ({courses, newCourse, setNewCourse}) => {
             console.log("deleted a course")
         })
     }
-
+*/
     //returns each course object
     return (
         <div className="course-list">
@@ -21,7 +21,7 @@ const CourseList = ({courses, newCourse, setNewCourse}) => {
                         {course.content}
                     </div>
                     <p className={"createdBy"}>Created by Course Instructor {course.prof}</p>
-                    <button className={"deleteCourse"} onClick={() => (deleteCourse(course.id))}> Delete Course </button>
+                    <button className={"deleteCourse"} /*onClick={() => (deleteCourse(course.id))}*/> Delete Course </button>
                 </div>
             ))}
         </div>
