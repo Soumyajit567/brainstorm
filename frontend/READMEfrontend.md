@@ -35,7 +35,7 @@ In terminal
 
 For testing announcements, courses, instructors, etc you must run a json server.
 In Terminal
-npx json-server --watch DataStorage/database.json --port 8000
+npx json-server --watch src/DataStorage/database.json --port 8000
 
 To have announcement/courses functionality you must install concurrently
 In Terminal

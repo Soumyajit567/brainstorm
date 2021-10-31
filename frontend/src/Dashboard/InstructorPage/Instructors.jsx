@@ -8,11 +8,12 @@ function Instructors(){
 
     const [instr, setInstr] = useState(null);
     const [newInstr, setNewInstr] = useState(false);
+
     //tells useEffect to rerender when a new course has been added
     const updateInstrs = () => {
         setNewInstr(true);
     };
-/*
+
     //fetches instructor data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
@@ -24,7 +25,7 @@ function Instructors(){
                 setInstr(data)
             })
     }, [newInstr]);
-*/
+
     return (
         //outputs courses
         <div className={"mainContent"}>
