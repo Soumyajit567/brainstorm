@@ -13,11 +13,11 @@ const Courses = () => {
         setNewCourse(true);
     };
 
-
-    //fetches data on the first render
+//fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
         fetch('http://localhost:8000/courses').then(response => {
+            console.log("retrieved courses")
             return response.json();
         })
             .then((data) => {

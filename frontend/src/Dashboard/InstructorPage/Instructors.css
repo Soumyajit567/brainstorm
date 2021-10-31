@@ -8,56 +8,56 @@
     text-align: center;
 }
 
-.newCourse {
+.newInstr {
     max-width: 1500px;
     margin: auto;
 }
 
-.courseHeader {
+.instrHeader {
     margin-bottom: 30px;
 }
 
-.courseInputs {
+.instrInputs {
     margin-top: 10px;
 }
 
-.course-preview {
+.instr-preview {
     background-color: lightblue;
     margin: 20px 0;
     border: 1px solid white;
 }
 
-.course-preview:hover {
+.instr-preview:hover {
     box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.course-preview h2 {
+.instr-preview h2 {
     font-size: 20px;
     margin-bottom: 8px;
 }
 
-.courseTitle {
+.instrName {
     margin-top: 30px;
     color: blue;
 }
 
-.courseNumber {
+.instrNum {
     font-style: normal;
     color: blue;
 }
 
-.courseContent {
+.instrContent {
     text-align: left;
     font-size: 150%;
     margin-left: 25px;
     margin-right: 25px;
 }
 
-.deleteCourse {
+.deleteInstr {
     margin-bottom: 10px;
 }
 
-.createCourse {
+.createInstr {
     margin-top: 10px;
 }
 

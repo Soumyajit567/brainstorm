@@ -7,21 +7,29 @@
       "id": 1
     }
   ],
-  "courses": [],
+  "courses": [
+    {
+      "title": "Software Engineering for Information Systems I & Software Engineering I",
+      "courseNum": "CSCI-P 565/465",
+      "content": "3 Credit  Hours: Analysis,  design  and  implementation  of  softwareand  informationsystems. Requirements  specification:  data  and  process  modeling.  Software  design  methodologies. Software  quality  assurance:  testing  and  verification.  Software  development  processes. Supervised team development of a real system for a client. Credit not given for both CSCI-P 565 and CSCI-P 465. ",
+      "prof": "Kurt Seiffert,",
+      "id": 1
+    }
+  ],
   "users": [
     {
-      "username": "asdf",
-      "email": "asdf",
-      "content": "asdf",
+      "username": "ashopf",
+      "email": "ashopf@iu.edu",
+      "content": "This user is Armand Hopf",
       "id": 1
     }
   ],
   "instrs": [
     {
-      "instrName": "armand",
-      "instrNum": "1234",
-      "content": "as;dlkjas;ldfj",
-      "prof": "allie",
+      "instrName": "Kurt Seiffert",
+      "instrNum": "123",
+      "content": "This instructor teaches P465",
+      "prof": "Armand",
       "id": 1
     }
   ]

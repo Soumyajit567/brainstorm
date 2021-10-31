@@ -1,20 +1,19 @@
-import { useState, useEffect } from 'react';
+
 import './Instructors.css'
 import InstructorList from "./InstructorList";
 import NewInstructor from "./NewInstructor";
+import {useEffect, useState} from "react";
 
-const Instructors = () => {
+function Instructors(){
 
     const [instr, setInstr] = useState(null);
     const [newInstr, setNewInstr] = useState(false);
-
     //tells useEffect to rerender when a new course has been added
     const updateInstrs = () => {
         setNewInstr(true);
     };
 
-
-    //fetches data on the first render
+    //fetches instructor data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
         fetch('http://localhost:8000/instrs').then(response => {
@@ -27,14 +26,18 @@ const Instructors = () => {
     }, [newInstr]);
 
     return (
-
         //outputs courses
         <div className={"mainContent"}>
+            {console.log("in the instructors page")}
             <div>
                 <NewInstructor newInstr={newInstr} setNewInstr={setNewInstr}/>
                 <h1> All Instructors </h1>
+                {
+                    instr && <InstructorList instrs={instr}
+                                             newInstr={newInstr}
+                                             setNewInstr={setNewInstr}/>
+                }
             </div>
-            {instr && <InstructorList instrs={instr} newInstr={newInstr} setNewInstr={setNewInstr}/>}
         </div>
     );
 }

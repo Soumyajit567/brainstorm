@@ -1,4 +1,5 @@
-const InstructorList = ({instrs, newInstr, setNewInstr}) => {
+import CourseList from "../CoursesPage/CourseList";
+function InstructorList({instrs, newInstr, setNewInstr}){
 
     //deletes courses from database
     const deleteInstr= (e) => {

@@ -7,7 +7,7 @@ function Home() {
                 <p className={"title"}>
                     Welcome to Brainstorm
                 </p>
-                <img src="/photos/brainstorm%20logo%20no%20text.png" height={500} alt={""} className={"homeLogo"}/>
+                <img src="photos/brainstorm%20logo%20no%20text.png" height={500} alt={""} className={"homeLogo"}/>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import './Instructors.css'
 import { useState } from "react";
 
-const NewInstructor = (props) => {
+function NewInstructor(props)  {
 
     const [instrName, setInstrName] = useState('');
     const [instrNum, setInstrNum] = useState('')

@@ -3,7 +3,7 @@ import React from "react";
 
 //js file for resetting for the password
 
-function ResetPage() {
+function ResetPage(){
 
     return (
         <body>
