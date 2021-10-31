@@ -1,5 +1,5 @@
 const UserList = ({users, newUser, setNewUser}) => {
-
+/*
     const deleteUser= (e) => {
         fetch('http://localhost:8000/users/' + e, {
             method: 'DELETE'
@@ -8,7 +8,7 @@ const UserList = ({users, newUser, setNewUser}) => {
             console.log("deleted a user")
         })
     }
-
+*/
     return (
         <div className="course-list">
             {users.map((user) => (
@@ -18,7 +18,7 @@ const UserList = ({users, newUser, setNewUser}) => {
                     <div className={"userContent"}>
                         {user.content}
                     </div>
-                    <button className={"deleteUser"} onClick={() => (deleteUser(user.id))}> Delete User </button>
+                    <button className={"deleteUser"} /* onClick={() => (deleteUser(user.id))} */> Delete User </button>
                 </div>
             ))}
         </div>

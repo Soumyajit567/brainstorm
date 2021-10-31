@@ -1,6 +1,6 @@
 const AnmtList = ({announcements, newAnmt, setNewAnmt}) => {
 
-
+/*
     //deletes the announcement from the database.json
     const deleteAnmt= (e) => {
         fetch('http://localhost:8000/anmts/' + e, {
@@ -10,7 +10,7 @@ const AnmtList = ({announcements, newAnmt, setNewAnmt}) => {
             console.log("deleted an announcement")
         })
     }
-
+*/
     //returns the announcement lists
     return (
         <div className="anmt-list">
@@ -21,7 +21,7 @@ const AnmtList = ({announcements, newAnmt, setNewAnmt}) => {
                         {anmts.content}
                     </div>
                     <p className={"writtenBy"}>Written by {anmts.author}</p>
-                    <button className={"deleteAnmt"} onClick={() => (deleteAnmt(anmts.id))}> Delete Announcement </button>
+                    <button className={"deleteAnmt"} /*onClick={() => (deleteAnmt(anmts.id))}*/> Delete Announcement </button>
                 </div>
             ))}
         </div>
