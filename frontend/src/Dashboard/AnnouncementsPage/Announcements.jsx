@@ -12,11 +12,11 @@ const Announcements = () => {
         setNewAnmt(true);
     };
 
-
+/*
     //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
-        fetch('https://brainstormbackend.herokuapp.com/anmts').then(response => {
+        fetch('http://localhost:8000/anmts').then(response => {
             return response.json();
         })
             .then((data) => {
@@ -24,7 +24,7 @@ const Announcements = () => {
                 setAnmt(data)
             })
     }, [newAnmt]);
-
+*/
 
     return (
 
