@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import './Courses.css'
 import CourseList from "./CourseList";
 import NewCourse from "./NewCourse";
-
 const Courses = () => {
 
     const [course, setCourse] = useState(null);

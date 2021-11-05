@@ -7,3 +7,4 @@ export { default as About } from './AboutPage/About';
 export { default as Login } from './LoginPage/Login';
 export { default as Register } from './LoginPage/Register'
 export { default as Instructors } from './InstructorPage/Instructors'
+export { default as Grades } from './GradesPage/Grades'

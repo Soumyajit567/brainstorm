@@ -1,5 +1,4 @@
 .mainContent{
-    background-color: lightgray;
     border: 2px black solid;
     margin-left: 20px;
     margin-right: 150px;
@@ -9,7 +8,6 @@
 }
 
 .anmt-preview {
-    background-color: lightblue;
     margin: 20px 0;
     border: 1px solid white;
 }
