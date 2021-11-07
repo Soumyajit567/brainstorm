@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import React, {useState} from "react";
 import styled, {ThemeProvider} from "styled-components";
 import {lightTheme, darkTheme, GlobalStyles} from "./themes";
-import {Home, About, Login, Register, Announcements, StudentCalendar, Courses, User, Instructors} from "./Dashboard";
+import {Home, About, Login, Register, Announcements, StudentCalendar, Courses, User, Instructors, Grades} from "./Dashboard";
 import Navbar from './Dashboard/Components/Navbar';
 
 
@@ -41,6 +41,7 @@ function App() {
                   <Route path="/announcements" exact component={Announcements} />
                   <Route path="/user" exact component={User} />
                   <Route path="/instructors" exact component={Instructors} />
+                  <Route path="/grades" exact component={Grades} />
                 </Switch>
               </div>
             </Router>

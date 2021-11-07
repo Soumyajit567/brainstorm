@@ -24,6 +24,7 @@ export const SidebarData = [
         icon: < AiIcons.AiFillHome /> ,
         cName: 'nav-text'
     },
+
     {
         title: 'Register',
         path: '/Register',
@@ -57,6 +58,12 @@ export const SidebarData = [
     {
         title: 'Instructors',
         path: './Instructors',
+        icon: < AiIcons.AiTwotoneBook /> ,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Grades',
+        path: './Grades',
         icon: < AiIcons.AiTwotoneBook /> ,
         cName: 'nav-text'
     },

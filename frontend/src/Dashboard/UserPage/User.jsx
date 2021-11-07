@@ -11,7 +11,7 @@ const User = () => {
     const updateUsers = () => {
         setNewUser(true);
     };
-/*
+
     //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
@@ -24,7 +24,7 @@ const User = () => {
                 setUser(data)
             })
     }, [newUser]);
-*/
+
     return (
 
         //outputs announcements

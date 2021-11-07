@@ -13,7 +13,7 @@ function Instructors(){
     const updateInstrs = () => {
         setNewInstr(true);
     };
-/*
+
     //fetches instructor data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
@@ -25,7 +25,7 @@ function Instructors(){
                 setInstr(data)
             })
     }, [newInstr]);
-*/
+
     return (
         //outputs courses
         <div className={"mainContent"}>

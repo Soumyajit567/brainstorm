@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './Courses.css'
 import CourseList from "./CourseList";
 import NewCourse from "./NewCourse";
+
 const Courses = () => {
 
     const [course, setCourse] = useState(null);
@@ -15,11 +16,10 @@ const Courses = () => {
 //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
-         fetch('https://brainstormbackend.herokuapp.com/course').then(response => {
+         fetch('http://localhost:8000/courses').then(response => {
             console.log("retrieved courses")
             return response.json();
-        })
-            .then((data) => {
+        }).then((data) => {
                 console.log(data)
                 setCourse(data)
             })
