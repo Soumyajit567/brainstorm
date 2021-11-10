@@ -23,6 +23,7 @@ const CourseList = ({courses, newCourse, setNewCourse}) => {
                     </div>
                     <p className={"createdBy"}>Created by Course Instructor {course.prof}</p>
                     <button className={"deleteCourse"} /*onClick={() => (deleteCourse(course.id))}*/> Delete Course </button>
+
                 </div>
             ))}
         </div>
