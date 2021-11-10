@@ -17,7 +17,7 @@ const Courses = () => {
 //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
-         fetch('https://brainstormbackend.herokuapp.com/course').then(response => {
+         fetch('brainstormbackend.herokuapp.com/course').then(response => {
             console.log("retrieved courses")
             return response.json();
         }).then((data) => {
