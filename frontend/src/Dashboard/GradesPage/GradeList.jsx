@@ -1,5 +1,5 @@
 const GradeList = (props) => {
-
+/*
         //deletes courses from database
         const deleteCourse= (e) => {
             fetch('http://localhost:8000/grades/' + e, {
@@ -10,7 +10,7 @@ const GradeList = (props) => {
                 console.log("deleted a course")
             })
         }
-
+*/
     //returns each course object
     return (
         <div className="course-list">
@@ -21,7 +21,7 @@ const GradeList = (props) => {
                     <div className={"courseContent"}>{ grade.userGrade }</div>
                     <div className={"courseContent"}>{ grade.totalGrade }</div>
                     <p className={"createdBy"}>Created by Course Instructor {grade.prof}</p>
-                    <button className={"deleteCourse"} onClick={() => (deleteCourse(grade.id))}> Delete Course </button>
+                    <button className={"deleteCourse"} /*onClick={() => (deleteCourse(grade.id))}*/> Delete Course </button>
                 </div>
             ))}
         </div>

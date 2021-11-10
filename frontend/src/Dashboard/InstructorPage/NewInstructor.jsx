@@ -8,7 +8,7 @@ function NewInstructor(props)  {
     const [content, setContent] = useState('');
     const [prof, setProf] = useState('');
 
-
+/*
     //creates a new course
     const createInstr = (e) => {
         e.preventDefault();
@@ -24,12 +24,12 @@ function NewInstructor(props)  {
         })
 
     }
-
+*/
     //returns the inputs for creating a new course
     return(
         <div className={"newInstr"}>
             <h1 className={"instrHeader"}> Create New Instructor </h1>
-            <form onSubmit={createInstr}>
+            <form /*onSubmit={createInstr}*/>
                 <label className={"instrInputs"}> Instructor Name: </label>
                 <input
                     type={"text"}

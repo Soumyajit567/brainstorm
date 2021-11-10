@@ -3,7 +3,7 @@ const AnmtList = ({announcements, newAnmt, setNewAnmt}) => {
 
     //deletes the announcement from the database.json
     const deleteAnmt= (e) => {
-        fetch('http://localhost:8000/anmts/' + e, {
+        fetch('https://brainstormbackend.herokuapp.com/anmts/' + e, {
             method: 'DELETE'
         }).then(() => {
             setNewAnmt(!newAnmt)

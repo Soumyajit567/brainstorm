@@ -5,11 +5,11 @@ import ShowTotalGrade from "./ShowTotalGrade"
 const Grades = () => {
 
     const [grade, setGrade] = useState(0);
-    const [newGrade, setNewGrade] = useState(true);
+    const [newGrade, setNewGrade] = useState(false);
     const [totalGrade, setTotalGrade] = useState(0);
 
 
-
+/*
     //fetches data on the first render
         useEffect(() => {
             console.log('use effect has occurred');
@@ -21,28 +21,32 @@ const Grades = () => {
                     console.log(data)
                     setGrade(data)
                 })
+                .then(() => {
+                let total = 0
+                for(let g in grade){
+                    total += parseInt(grade[g].totalGrade)
+                }
+                console.log("update grades. total= " + total)
+
+                setTotalGrade(total);
+            })
         }, [newGrade]);
 
         const updateGradeValues = () => {
-            let total = 0
-            for(var g in grade){
-                total += parseInt(grade[g].totalGrade)
-            }
-            setTotalGrade(total);
-        };
 
+        };
+*/
     return (
 
         //outputs courses
         <div className={"mainContent"}>
             <div>
-                <NewGrade newGrade={newGrade} setNewGrade={setNewGrade} updateGrade={updateGradeValues()}/>
+                <NewGrade newGrade={newGrade} setNewGrade={setNewGrade} updateGrade={updateGradeValues}/>
                 <h1> All Grades </h1>
             </div>
             {grade && <ShowTotalGrade allGrades={grade}
                                       newGrades={newGrade}
                                       setNewGrades={setNewGrade}
-                                      courseGrade={totalGrade}
                                       courseGrade={totalGrade}
                                       setCourseGrade={setTotalGrade}/>
             }
@@ -50,7 +54,7 @@ const Grades = () => {
                                  newGrade={newGrade}
                                  setNewGrade={setNewGrade}
                                  courseGrade={totalGrade}
-                                 updateGrades={updateGradeValues()}/>
+                                 updateGrades={updateGradeValues}/>
             }
         </div>
     );

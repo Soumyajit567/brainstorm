@@ -1,6 +1,6 @@
 
 function InstructorList({instrs, newInstr, setNewInstr}){
-
+/*
     //deletes courses from database
     const deleteInstr= (e) => {
         fetch('http://localhost:8000/instrs/' + e, {
@@ -10,7 +10,7 @@ function InstructorList({instrs, newInstr, setNewInstr}){
             console.log("deleted an instructor")
         })
     }
-
+*/
     //returns each course object
     return (
         <div className="instructor-list">
@@ -22,7 +22,7 @@ function InstructorList({instrs, newInstr, setNewInstr}){
                         {instr.content}
                     </div>
                     <p className={"createdBy"}>Created by Administrator {instr.prof}</p>
-                    <button className={"deleteInstr"} onClick={() => (deleteInstr(instr.id))}> Delete Instructor </button>
+                    <button className={"deleteInstr"} /*onClick={() => (deleteInstr(instr.id))}*/> Delete Instructor </button>
                 </div>
             ))}
         </div>
