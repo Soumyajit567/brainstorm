@@ -13,6 +13,7 @@ const Courses = () => {
         setNewCourse(true);
     };
 
+    /*
 //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
@@ -24,7 +25,7 @@ const Courses = () => {
                 setCourse(data)
             })
     }, [newCourse]);
-
+*/
     return (
 
         //outputs courses
