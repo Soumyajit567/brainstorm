@@ -6,6 +6,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 const cors = require('cors');
 
+
+app.use(cors());
+
 app.use(express.static(path.join(__dirname, "build")));
 
 // This route serves the React app
@@ -13,4 +16,3 @@ app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, "build", "index.
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
 
-app.use(cors());

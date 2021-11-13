@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "main": "server.js",
+  "proxy": "https://brainstormbackend.herokuapp.com",
   "engines": {
     "npm": "8.1.0",
     "node": "12.13.0"

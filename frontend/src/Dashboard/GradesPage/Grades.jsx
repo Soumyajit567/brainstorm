@@ -41,7 +41,7 @@ const Grades = () => {
         //outputs courses
         <div className={"mainContent"}>
             <div>
-                <NewGrade newGrade={newGrade} setNewGrade={setNewGrade} updateGrade={updateGradeValues}/>
+                <NewGrade newGrade={newGrade} setNewGrade={setNewGrade}/>
                 <h1> All Grades </h1>
             </div>
             {grade && <ShowTotalGrade allGrades={grade}
@@ -53,8 +53,7 @@ const Grades = () => {
             {grade && <GradeList grades={grade}
                                  newGrade={newGrade}
                                  setNewGrade={setNewGrade}
-                                 courseGrade={totalGrade}
-                                 updateGrades={updateGradeValues}/>
+                                 courseGrade={totalGrade}/>
             }
         </div>
     );

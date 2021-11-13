@@ -14,7 +14,7 @@ const NewCourse = (props) => {
         e.preventDefault();
         const course = {title, courseNum, content, prof};
 
-        fetch('brainstormbackend.herokuapp.com/course', {
+        fetch('/course', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(course)
