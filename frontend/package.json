@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "main": "server.js",
+  "proxy": "https://brainstormbackend.herokuapp.com:3001",
   "engines": {
     "npm": "8.1.0",
     "node": "12.13.0"
@@ -11,6 +12,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.24.0",
     "concurrently": "^6.3.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -28,7 +30,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm install"
+    "heroku-postbuild": "npm install",
+    "server": "node server.js",
+    "dev": "concurrently --kill-other-on-fail \"npm run server\" \"npm start\""
   },
   "eslintConfig": {
     "extends": [

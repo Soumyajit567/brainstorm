@@ -12,9 +12,10 @@ const NewCourse = (props) => {
     //creates a new course
     const createCourse = (e) => {
         e.preventDefault();
-        const course = {title, courseNum, content, prof};
+        // eslint-disable-next-line no-undef
+        const course = {title, courseNum, content, prof, key};
 
-        fetch('https://brainstormbackend.herokuapp.com/course', {
+        fetch('/course', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(course)

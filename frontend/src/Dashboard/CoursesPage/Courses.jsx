@@ -5,6 +5,7 @@ import NewCourse from "./NewCourse";
 
 const Courses = () => {
 
+    const backendURL = "https://brainstormbackend.herokuapp.com"
     const [course, setCourse] = useState(null);
     const [newCourse, setNewCourse] = useState(false);
 
@@ -17,14 +18,14 @@ const Courses = () => {
 //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
-         fetch('https://brainstormbackend.herokuapp.com/course').then(response => {
-            console.log("retrieved courses")
-            return response.json();
+        fetch('https://brainstormbackend.herokuapp.com/course/').then(response => {
+            return response.json()
         }).then((data) => {
-                console.log(data)
-                setCourse(data)
-            })
-    }, [newCourse])
+            console.log(data)
+            setCourse(data)
+        })
+    },[newCourse])
+
 
     return (
 
@@ -40,3 +41,12 @@ const Courses = () => {
 }
 
 export default Courses;
+
+/*
+ fetch('/course/').then(response => {
+            return response.json()
+        }).then((data) => {
+                console.log(data)
+                setCourse(data)
+            })
+ */
