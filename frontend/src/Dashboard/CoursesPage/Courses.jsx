@@ -17,15 +17,14 @@ const Courses = () => {
 //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
-         fetch('/course').then(response => {
+         fetch('https://brainstormbackend.herokuapp.com/course').then(response => {
             console.log("retrieved courses")
-             console.log(response + "this is the response")
             return response.json();
         }).then((data) => {
                 console.log(data)
                 setCourse(data)
             })
-    }, [newCourse]);
+    }, [newCourse])
 
     return (
 

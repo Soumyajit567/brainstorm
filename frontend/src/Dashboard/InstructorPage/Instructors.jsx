@@ -25,6 +25,7 @@ function Instructors(){
                 setInstr(data)
             })
     }, [newInstr]);
+
 */
     return (
         //outputs courses

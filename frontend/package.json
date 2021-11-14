@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "main": "server.js",
-  "proxy": "https://brainstormbackend.herokuapp.com",
   "engines": {
     "npm": "8.1.0",
     "node": "12.13.0"
@@ -25,7 +24,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

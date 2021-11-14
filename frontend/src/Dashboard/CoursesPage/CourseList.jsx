@@ -3,7 +3,7 @@ const CourseList = ({courses, newCourse, setNewCourse}) => {
 
     //deletes courses from database
     const deleteCourse= (e) => {
-        fetch('/course' + e, {
+        fetch('https://brainstormbackend.herokuapp.com/course/' + e, {
             method: 'DELETE'
         }).then(() => {
             setNewCourse(!newCourse)
