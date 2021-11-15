@@ -6,7 +6,7 @@ const NewUser = (props) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('')
     const [content, setContent] = useState('');
-/*
+
     //creates a new user
     const createUser = (e) => {
         e.preventDefault();
@@ -22,7 +22,7 @@ const NewUser = (props) => {
         })
 
     }
-*/
+
     //returns the inputs for creating a new announcement
     return(
         <div className={"newUser"}>
