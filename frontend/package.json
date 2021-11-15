@@ -27,10 +27,9 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "(cd server && npm run start) & npm run start",
-    "build": "react-scripts build",
+    "build": "npm run build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm install"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
