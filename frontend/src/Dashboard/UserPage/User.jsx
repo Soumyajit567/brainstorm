@@ -11,11 +11,11 @@ const User = () => {
     const updateUsers = () => {
         setNewUser(true);
     };
-/*
+
     //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
-        fetch('http://localhost:8000/users').then(response => {
+        fetch('https://brainstormbackend.herokuapp.com/user').then(response => {
             console.log("retrieved users")
             return response.json();
         })
@@ -24,7 +24,7 @@ const User = () => {
                 setUser(data)
             })
     }, [newUser]);
-*/
+
     return (
 
         //outputs announcements
