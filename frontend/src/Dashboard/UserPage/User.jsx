@@ -15,10 +15,10 @@ const User = () => {
     //fetches data on the first render
     useEffect(()=> {
         console.log('use effect has occurred');
-        fetch('https://brainstormbackend.herokuapp.com/user').then(response => {
+        fetch('https://brainstormbackend.herokuapp.com/user/').then(response => {
             console.log("retrieved users")
             return response.json();
-        })
+        })''
             .then((data) => {
                 console.log(data)
                 setUser(data)
