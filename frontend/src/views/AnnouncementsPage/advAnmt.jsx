@@ -8,7 +8,7 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-
+import NewAnmt from "./NewAnmt";
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -45,10 +45,13 @@ export default function AdvAnmt() {
   const classes = useStyles();
   const [anmt, setAnmt] = useState(null);
   const [newAnmt, setNewAnmt] = useState(false);
-
+  const [showNewAnmt, setShowNewAnmt] = useState(true);
   const updateAnmts = () => {
     setNewAnmt(true);
   };
+  const displayNewAnmt = () => {
+    setShowNewAnmt(s => !s)
+  }
 
   //fetches data on the first render
   useEffect(() => {
@@ -85,6 +88,14 @@ export default function AdvAnmt() {
               />
             </CardBody>
           </Card>
+        )}
+        <button onClick={() => displayNewAnmt()}>
+          New Announcement
+        </button>
+        {showNewAnmt ? (
+            console.log("newAnmt is hidden!")
+        ) : (
+            <NewAnmt newAnmt={newAnmt} setNewAnmt={setNewAnmt} />
         )}
       </GridItem>
     </GridContainer>

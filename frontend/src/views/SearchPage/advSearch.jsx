@@ -41,26 +41,27 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function advSearch() {
+export default function advSearch(props) {
   const classes = useStyles();
   const [search, setSearch] = useState(null);
   const [newSearch, setNewSearch] = useState(false);
 
-  const updateSearches = () => {
-    setNewSearch(true);
-  };
+  useEffect(() => {
+    console.log("we want to see Search Results!")
+        fetch(
+          "https://brainstormbackend.herokuapp.com/user/search/7/user"
+        )
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+            setSearch(data);
+          });
+  }, [newSearch]);
 
-  const searchResults = (e) => {
-    console.log("use effect has occurred");
-    fetch("https://brainstormbackend.herokuapp.com/search/{7}/{" + e + "}")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setSearch(data);
-      });
-  };
+  const searchData = search && search.map((search) => [search]);
+
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
@@ -75,7 +76,7 @@ export default function advSearch() {
             <Table
               tableHeaderColor="primary"
               tableHead={["Found"]}
-              tableData={[["A"], ["B"], ["C"], ["A"], ["B"], ["A"]]}
+              tableData={searchData}
             />
           </CardBody>
         </Card>

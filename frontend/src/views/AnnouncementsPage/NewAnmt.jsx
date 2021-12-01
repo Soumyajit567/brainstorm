@@ -5,15 +5,15 @@ const NewAnmt = (props) => {
 
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const [author, setAuthor] = useState('');
+    const [course_id, setCourse_id] = useState('');
 
 
     //creates a new announcement
     const createAnmt = (e) => {
         e.preventDefault();
-        const anmt = {title, content, author};
-
-        fetch('http://localhost:8000/anmts', {
+        const anmt = {title, content, course_id};
+        console.log("posting a new announcement")
+        fetch('http://brainstormbackend.herokuapp.com/course/anmt/' + anmt.course_id, {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(anmt)
@@ -28,7 +28,7 @@ const NewAnmt = (props) => {
     return(
         <div className={"newAnnouncement"}>
             <h1 className={"anmtHeader"}> Create New Announcement </h1>
-            <form /*onSubmit={createAnmt}*/>
+            <form onSubmit={createAnmt}>
                 <label className={"anmtInputs"}> Announcement Title: </label>
                 <input
                     type={"text"}
@@ -41,12 +41,12 @@ const NewAnmt = (props) => {
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
-                <label className={"anmtInputs"}> Announcement Author: </label>
+                <label className={"anmtInputs"}> Announcement Course ID: </label>
                 <input
                     type={"text"}
                     required
-                    value={author}
-                    onChange={(e) => setAuthor(e.target.value)}
+                    value={course_id}
+                    onChange={(e) => setCourse_id(e.target.value)}
                 />
                 <button className={"createAnmt"}> Create Announcement </button>
             </form>

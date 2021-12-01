@@ -16,10 +16,9 @@ import Notifications from "@material-ui/icons/Notifications";
 import Dashboard from "@material-ui/icons/Dashboard";
 import Search from "@material-ui/icons/Search";
 // core components
-import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
-import advSearch from "../../views/SearchPage/advSearch";
+import CustomInput from "components/CustomInput/CustomInput.js";
 
 const useStyles = makeStyles(styles);
 
@@ -27,7 +26,7 @@ export default function AdminNavbarLinks() {
   const classes = useStyles();
   const [openNotification, setOpenNotification] = React.useState(null);
   const [openProfile, setOpenProfile] = React.useState(null);
-  const [searchInput, setSearchInput] = React.useState("");
+
   const handleClickNotification = (event) => {
     if (openNotification && openNotification.contains(event.target)) {
       setOpenNotification(null);
@@ -48,39 +47,28 @@ export default function AdminNavbarLinks() {
   const handleCloseProfile = () => {
     setOpenProfile(null);
   };
-  const giveProps = (e) => {
-    <advSearch searchInput={e} />;
-  };
+  const handleChange = (e) => {
+      console.log("handle change: " + e);
+      <advSearch searchInput={e}/>
+  }
   return (
     <div>
       <div className={classes.searchWrapper}>
-        <form onSubmit={giveProps()}>
-          <label className={"sInputs"}> Search: </label>
-          <input
-            type={"text"}
-            required
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-          />
-          <Button
-            href="/admin/Search"
-            color="white"
-            aria-label="edit"
-            justIcon
-            round
-          >
-            <Search />
-          </Button>
-        </form>
-        <Button
-          onClick={() => giveProps()}
-          href="/admin/Search"
-          color="white"
-          aria-label="edit"
-          justIcon
-          round
-        >
-          <Search />
+        <CustomInput
+            formControlProps={{
+              className: classes.margin + " " + classes.search,
+            }}
+            inputProps={{
+              placeholder: "Search",
+              inputProps: {
+                  onChange: (e) => this.handleChange(e),
+                  name: "searchInput",
+                  type: "text"
+            },
+            }}
+        />
+        <Button href="/admin/Search" color="white" aria-label="edit" justIcon round>
+          <Search  />
         </Button>
       </div>
       <Button
