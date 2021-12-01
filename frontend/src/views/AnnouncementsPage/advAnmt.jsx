@@ -41,7 +41,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function advAnmt() {
+export default function AdvAnmt() {
   const classes = useStyles();
   const [anmt, setAnmt] = useState(null);
   const [newAnmt, setNewAnmt] = useState(false);
