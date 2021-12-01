@@ -61,7 +61,7 @@ export default function AdminNavbarLinks() {
             inputProps={{
               placeholder: "Search",
               inputProps: {
-                  onChange: (e) => this.handleChange(e),
+                  onChange: (e) => handleChange(e),
                   name: "searchInput",
                   type: "text"
             },

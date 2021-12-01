@@ -43,15 +43,15 @@ const useStyles = makeStyles(styles);
 
 export default function advSearch(props) {
   const classes = useStyles();
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState([]);
   const [newSearch, setNewSearch] = useState(false);
+  console.log("hey bitches we are searching shit")
 
   useEffect(() => {
     console.log("we want to see Search Results!")
         fetch(
           "https://brainstormbackend.herokuapp.com/user/search/7/user"
-        )
-          .then((response) => {
+        ).then((response) => {
             return response.json();
           })
           .then((data) => {
@@ -60,7 +60,7 @@ export default function advSearch(props) {
           });
   }, [newSearch]);
 
-  const searchData = search && search.map((search) => [search]);
+  const searchData = search && search.map((search) => [search.title, search.description]);
 
   return (
     <GridContainer>
