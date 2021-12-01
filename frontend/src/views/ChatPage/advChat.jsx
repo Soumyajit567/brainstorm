@@ -61,7 +61,7 @@ export default function advChat() {
                 console.log(data);
                 setMsg(data);
             });
-    }, [newMsg]);
+    });
 
     const msgData =
         msg && msg.map((msgs) => [msgs.text, msgs.username]);
