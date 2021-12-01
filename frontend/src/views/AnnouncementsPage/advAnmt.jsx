@@ -46,9 +46,11 @@ export default function AdvAnmt() {
   const [anmt, setAnmt] = useState(null);
   const [newAnmt, setNewAnmt] = useState(false);
   const [showNewAnmt, setShowNewAnmt] = useState(true);
+
   const updateAnmts = () => {
     setNewAnmt(true);
   };
+
   const displayNewAnmt = () => {
     setShowNewAnmt(s => !s)
   }

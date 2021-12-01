@@ -81,7 +81,7 @@ const dashboardRoutes = [
   },
   {
     path: "/Search",
-    name: "Search Results",
+    name: "Search",
     icon: Assignment,
     component: advSearch,
     layout: "/admin",

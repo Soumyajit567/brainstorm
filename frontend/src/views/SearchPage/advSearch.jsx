@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
@@ -41,24 +41,24 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function advSearch(props) {
+export default function advSearch() {
   const classes = useStyles();
   const [search, setSearch] = useState([]);
-  const [newSearch, setNewSearch] = useState(false);
-  console.log("hey bitches we are searching shit")
+  const [searchInput, setNewSearchInput] = useState('');
 
-  useEffect(() => {
+
+  const showResults = () => {
     console.log("we want to see Search Results!")
-        fetch(
-          "https://brainstormbackend.herokuapp.com/user/search/7/user"
-        ).then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            console.log(data);
-            setSearch(data);
-          });
-  }, [newSearch]);
+    fetch(
+        "https://brainstormbackend.herokuapp.com/user/search/7/" + searchInput
+    ).then((response) => {
+      return response.json();
+    })
+        .then((data) => {
+          console.log(data);
+          setSearch(data);
+        });
+  };
 
   const searchData = search && search.map((search) => [search.title, search.description]);
 
@@ -71,6 +71,14 @@ export default function advSearch(props) {
             <p className={classes.cardCategoryWhite}>
               View your search results below.
             </p>
+            <form>
+              <input
+                  type={"text"}
+                  required
+                  value={searchInput}
+                  onChange={(e) => setNewSearchInput(e.target.value)}/>
+              <button onClick={showResults} className={"createAnmt"}> Search </button>
+            </form>
           </CardHeader>
           <CardBody>
             <Table

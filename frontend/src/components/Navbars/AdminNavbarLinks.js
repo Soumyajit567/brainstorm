@@ -47,30 +47,8 @@ export default function AdminNavbarLinks() {
   const handleCloseProfile = () => {
     setOpenProfile(null);
   };
-  const handleChange = (e) => {
-      console.log("handle change: " + e);
-      <advSearch searchInput={e}/>
-  }
   return (
     <div>
-      <div className={classes.searchWrapper}>
-        <CustomInput
-            formControlProps={{
-              className: classes.margin + " " + classes.search,
-            }}
-            inputProps={{
-              placeholder: "Search",
-              inputProps: {
-                  onChange: (e) => handleChange(e),
-                  name: "searchInput",
-                  type: "text"
-            },
-            }}
-        />
-        <Button href="/admin/Search" color="white" aria-label="edit" justIcon round>
-          <Search  />
-        </Button>
-      </div>
       <Button
         color={window.innerWidth > 959 ? "transparent" : "white"}
         justIcon={window.innerWidth > 959}
