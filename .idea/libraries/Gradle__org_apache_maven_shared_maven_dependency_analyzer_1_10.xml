@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.maven.shared:maven-dependency-analyzer:1.10">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.shared/maven-dependency-analyzer/1.10/a7378d4cb2d73e403df605f289197afb1b6a437/maven-dependency-analyzer-1.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.shared/maven-dependency-analyzer/1.10/3f82479bedd85807768a9b97a9d5421976c4a753/maven-dependency-analyzer-1.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -47,3 +47,5 @@ endpoints for database
 /anmts POST Add a new Anmt
 /anmts/{id} Get Fetch a single Anmt
 /anmts/{id} Delete an Anmt
+
+added login and registration page
