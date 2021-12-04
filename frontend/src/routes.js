@@ -34,7 +34,8 @@ import AdvAnmt from "./views/AnnouncementsPage/advAnmt";
 import advSearch from "./views/SearchPage/advSearch";
 import advChat from "./views/ChatPage/advChat";
 // core components/views for RTL layout
-
+import login from "./views/Login_Page/Login";
+import registration from "./views/Registration_Page/Register";
 const dashboardRoutes = [
   {
     path: "/dashboard",
@@ -44,10 +45,17 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/user",
-    name: "User Profile",
+    path: "/login",
+    name: "Login",
     icon: Person,
-    component: UserProfile,
+    component: login,
+    layout: "/admin",
+  },
+  {
+    path: "/user",
+    name: "Register",
+    icon: Person,
+    component: registration,
     layout: "/admin",
   },
   {
