@@ -50,7 +50,7 @@ export default function advCourse() {
   //fetches data on the first render
   useEffect(() => {
     console.log("use effect has occurred");
-    fetch("https://brainstormbackend.herokuapp.com/course")
+    fetch("https://brainstormbackend.herokuapp.com/user/detailed-course/7")
       .then((response) => {
         console.log("retrieved courses");
         return response.json();
@@ -62,7 +62,11 @@ export default function advCourse() {
   }, [newCourse]);
 
   const courseData =
-    course && course.map((course) => [course.title, course.description]);
+    course && course.map((course) => [
+        course.courseTitle,
+        course.courseDescription,
+        course.courseGrade.toString() + "%",
+        course.coursePoints.toString()]);
 
   return (
     <GridContainer>
@@ -78,7 +82,7 @@ export default function advCourse() {
             {course && (
               <Table
                 tableHeaderColor="primary"
-                tableHead={["Title", "Description"]}
+                tableHead={["Title", "Description", "grade", "points"]}
                 tableData={courseData}
               />
             )}

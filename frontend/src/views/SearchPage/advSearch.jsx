@@ -47,10 +47,34 @@ export default function advSearch() {
   const [searchInput, setNewSearchInput] = useState('');
 
 
-  const showResults = () => {
+  const showAllResults = () => {
     console.log("we want to see Search Results!")
     fetch(
         "https://brainstormbackend.herokuapp.com/user/search/7/" + searchInput
+    ).then((response) => {
+      return response.json();
+    })
+        .then((data) => {
+          console.log(data);
+          setSearch(data);
+        });
+  };
+  const showAnmtResults = () => {
+    console.log("we want to see Search Results!")
+    fetch(
+        "https://brainstormbackend.herokuapp.com/user/search/7/anmts/" + searchInput
+    ).then((response) => {
+      return response.json();
+    })
+        .then((data) => {
+          console.log(data);
+          setSearch(data);
+        });
+  };
+  const showAsgmtResults = () => {
+    console.log("we want to see Search Results!")
+    fetch(
+        "https://brainstormbackend.herokuapp.com/user/search/7/asgmts/" + searchInput
     ).then((response) => {
       return response.json();
     })
@@ -71,14 +95,15 @@ export default function advSearch() {
             <p className={classes.cardCategoryWhite}>
               View your search results below.
             </p>
-            <form>
               <input
                   type={"text"}
                   required
                   value={searchInput}
                   onChange={(e) => setNewSearchInput(e.target.value)}/>
-              <button onClick={showResults} className={"createAnmt"}> Search </button>
-            </form>
+            {console.log("here is the search input: " + searchInput)}
+              <button onClick={showAllResults} className={"createAnmt"}> Search All</button>
+              <button onClick={showAnmtResults} className={"createAnmt"}> Search Announcements</button>
+              <button onClick={showAsgmtResults} className={"createAnmt"}> Search Assignments</button>
           </CardHeader>
           <CardBody>
             <Table

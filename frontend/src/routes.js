@@ -31,7 +31,6 @@ import Icons from "views/Icons/Icons.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
 import advCourse from "./views/CoursePage/advCourse";
 import AdvAnmt from "./views/AnnouncementsPage/advAnmt";
-import advGrade from "./views/GradesPage/advGrades";
 import advSearch from "./views/SearchPage/advSearch";
 import advChat from "./views/ChatPage/advChat";
 // core components/views for RTL layout
@@ -61,15 +60,9 @@ const dashboardRoutes = [
   {
     path: "/Anmt",
     name: "Announcements",
+    courses: ["poop", "butt"],
     icon: Assignment,
     component: AdvAnmt,
-    layout: "/admin",
-  },
-  {
-    path: "/Grades",
-    name: "Grades",
-    icon: Assignment,
-    component: advGrade,
     layout: "/admin",
   },
   {

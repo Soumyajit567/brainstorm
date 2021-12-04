@@ -68,6 +68,18 @@ export default function AdvAnmt() {
       });
   }, [newAnmt]);
 
+  const showAnmt = () => {
+    console.log("use effect has occurred");
+    fetch("https://brainstormbackend.herokuapp.com/course/anmt/4")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          setAnmt(data);
+        });
+  }
+
   const anmtData =
     anmt && anmt.map((anmts) => [anmts.title, anmts.description]);
 
@@ -81,6 +93,8 @@ export default function AdvAnmt() {
               <p className={classes.cardCategoryWhite}>
                 Click on an Announcement to see more details
               </p>
+              <button onClick={showAnmt} className={"createAnmt"}> course 1 </button>
+
             </CardHeader>
             <CardBody>
               <Table

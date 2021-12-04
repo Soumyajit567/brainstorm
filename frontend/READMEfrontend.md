@@ -1,6 +1,7 @@
 To run project you must have npm installed
 In terminal "npm install"
-
+In terminal "npm install --legacy-peer-deps"
+In terminal "npm install react-bootstrap"
 Next you must install react-router-dom
 In terminal "npm install react-router-dom"
 

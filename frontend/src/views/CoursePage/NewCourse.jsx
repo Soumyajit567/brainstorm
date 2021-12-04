@@ -8,7 +8,6 @@ const NewCourse = (props) => {
     const [content, setContent] = useState('');
     const [prof, setProf] = useState('');
 
-
     //creates a new course
     const createCourse = (e) => {
         e.preventDefault();

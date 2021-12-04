@@ -17,7 +17,6 @@ import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.js";
 import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
 
 import styles from "assets/jss/material-dashboard-react/components/sidebarStyle.js";
-
 const useStyles = makeStyles(styles);
 
 export default function Sidebar(props) {
@@ -28,7 +27,12 @@ export default function Sidebar(props) {
     return location.pathname === routeName;
   }
   const { color, logo, image, logoText, routes } = props;
-  var links = (
+
+    function btnToggle() {
+        document.getElementById("Dropdown").classList.toggle("show");
+    }
+
+    var links = (
     <List className={classes.list}>
       {routes.map((prop, key) => {
         var activePro = " ";
