@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.maven.plugins:maven-dependency-plugin:3.1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.plugins/maven-dependency-plugin/3.1.1/e348af6765ac0b96de98983f9ac96df3649f0b69/maven-dependency-plugin-3.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.plugins/maven-dependency-plugin/3.1.1/cedc78e2708ddb19b1687494632697bff2b7d3b4/maven-dependency-plugin-3.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
