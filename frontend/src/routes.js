@@ -1,19 +1,13 @@
 /*!
-
 =========================================================
 * Material Dashboard React - v1.10.0
 =========================================================
-
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
 * Copyright 2021 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
-
 * Coded by Creative Tim
-
 =========================================================
-
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 */
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
@@ -37,104 +31,100 @@ import advChat from "./views/ChatPage/advChat";
 // core components/views for RTL layout
 import login from "./views/Login_Page/Login";
 import registration from "./views/Registration_Page/Register";
-
-
 const dashboardRoutes = [
     {
-      path: "/dashboard",
-      name: "Dashboard",
-      icon: Dashboard,
-      component: DashboardPage,
-      layout: "/admin",
+        path: "/dashboard",
+        name: "Dashboard",
+        icon: Dashboard,
+        component: DashboardPage,
+        layout: "/admin",
     },
     {
-      path: "/login",
-      name: "Login",
-      icon: Person,
-      component: login,
-      layout: "/admin",
+        path: "/login",
+        name: "Login",
+        icon: Person,
+        component: login,
+        layout: "/admin",
     },
     {
-      path: "/register",
-      name: "Register",
-      icon: Person,
-      component: registration,
-      layout: "/admin",
-    }, {
-      path: "/user",
-      name: "User Profile",
-      icon: Person,
-      component: UserProfile,
-      layout: "/admin",
+        path: "/register",
+        name: "Register",
+        icon: Person,
+        component: registration,
+        layout: "/admin",
     },
     {
-      path: "/Courses",
-      name: "Courses",
-      icon: Assignment,
-      component: advCourse,
-      layout: "/admin",
+        path: "/user",
+        name: "User Profile",
+        icon: Person,
+        component: UserProfile,
+        layout: "/admin",
     },
     {
-      path: "/Anmt",
-      name: "Announcements",
-      courses: ["poop", "butt"],
-      icon: Assignment,
-      component: AdvAnmt,
-      layout: "/admin",
+        path: "/Courses",
+        name: "Courses",
+        icon: Assignment,
+        component: advCourse,
+        layout: "/admin",
     },
     {
-      path: "/Ag",
-      name: "Assignments",
-      courses: ["Software", "Engineering"],
-      icon: Assignment,
-      component: AdvAg,
-      layout: "/admin",
+        path: "/Anmt",
+        name: "Announcements",
+        courses: ["poop", "butt"],
+        icon: Assignment,
+        component: AdvAnmt,
+        layout: "/admin",
     },
     {
-      path: "/Chat",
-      name: "Chat",
-      icon: Assignment,
-      component: advChat,
-      layout: "/admin",
+        path: "/Ag",
+        name: "Assignments",
+        courses: ["Software", "Engineering"],
+        icon: Assignment,
+        component: AdvAg,
+        layout: "/admin",
     },
     {
-      path: "/Search",
-      name: "Search",
-      icon: Assignment,
-      component: advSearch,
-      layout: "/admin",
+        path: "/Chat",
+        name: "Chat",
+        icon: Assignment,
+        component: advChat,
+        layout: "/admin",
     },
     {
-      path: "/table",
-      name: "Table List",
-      icon: Assignment,
-      component: TableList,
-      layout: "/admin",
+        path: "/Search",
+        name: "Search",
+        icon: Assignment,
+        component: advSearch,
+        layout: "/admin",
     },
     {
-      path: "/typography",
-      name: "Typography",
-      icon: LibraryBooks,
-      component: Typography,
-      layout: "/admin",
+        path: "/table",
+        name: "Table List",
+        icon: Assignment,
+        component: TableList,
+        layout: "/admin",
     },
     {
-      path: "/icons",
-      name: "Icons",
-      icon: BubbleChart,
-      component: Icons,
-      layout: "/admin",
+        path: "/typography",
+        name: "Typography",
+        icon: LibraryBooks,
+        component: Typography,
+        layout: "/admin",
     },
     {
-      path: "/notifications",
-      name: "Notifications",
-      icon: Notifications,
-      component: NotificationsPage,
-      layout: "/admin",
-    }
+        path: "/icons",
+        name: "Icons",
+        icon: BubbleChart,
+        component: Icons,
+        layout: "/admin",
+    },
+    {
+        path: "/notifications",
+        name: "Notifications",
+        icon: Notifications,
+        component: NotificationsPage,
+        layout: "/admin",
+    },
 ];
-
-
-
 
 export default dashboardRoutes;
