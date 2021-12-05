@@ -7,6 +7,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
+import Button from "components/CustomButtons/Button"
 // core components
 import styles from "assets/jss/material-dashboard-react/components/tableStyle.js";
 
@@ -45,7 +46,7 @@ export default function CustomTable(props) {
                     </TableCell>
                   );
                 })}
-                <button> Submit </button>
+                <Button href={"/admin/as"}> Submit </Button>
               </TableRow>
             );
           })}
