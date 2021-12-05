@@ -6,7 +6,7 @@ const NewAnmt = (props) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [course_id, setCourse_id] = useState('');
-    const [announcementDate, setAnnouncementDate] = useState("2021-11-14T00:00:00")
+    const [announcementDate, setAnnouncementDate] = useState("2021-11-14T00:00:00");
 
 
     //creates a new announcement

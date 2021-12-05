@@ -8,6 +8,7 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import NewCourse from "./NewCourse";
 
 const styles = {
   cardCategoryWhite: {
@@ -46,11 +47,20 @@ export default function advCourse() {
 
   const [course, setCourse] = useState(null);
   const [newCourse, setNewCourse] = useState(false);
+  const [showNewCourse, setShowNewCourse] = useState(true);
+
+  const updateCourse = () => {
+    setNewCourse(true);
+  };
+
+  const displayNewCourse = () => {
+    setShowNewCourse(s => !s)
+  }
 
   //fetches data on the first render
   useEffect(() => {
     console.log("use effect has occurred");
-    fetch("https://brainstormbackend.herokuapp.com/user/detailed-course/7")
+    fetch("https://brainstormbackend.herokuapp.com/user/detailed-course/" + localStorage.getItem("3"))
       .then((response) => {
         console.log("retrieved courses");
         return response.json();
@@ -87,7 +97,14 @@ export default function advCourse() {
               />
             )}
           </CardBody>
-        </Card>
+        </Card><button onClick={() => displayNewCourse()}>
+        New Course
+      </button>
+        {showNewCourse ? (
+            console.log("newAnmt is hidden!")
+        ) : (
+            <NewCourse newCourse={newCourse} setNewCourse={setNewCourse} />
+        )}
       </GridItem>
     </GridContainer>
   );

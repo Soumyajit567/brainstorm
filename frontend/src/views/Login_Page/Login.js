@@ -36,46 +36,40 @@ const useStyles = makeStyles(styles);
 
 export default function Login() {
   const classes = useStyles();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  // const [user, setUser] = useState(null);
-
-  // const createAn = (e) => {
-  //   e.preventDefault();
-  //   const u = { username, password };
-
-  // fetch("https://brainstormbackend.herokuapp.com/", +username + password, {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(u),
-  //     }).then(() => {
-  //       props.setUser(!props.User);
-  //       console.log("Logged in");
-  //     });
-  //   };
+  const [user, setUser] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = () => {
     // send the username and password to the server
-    console.log("use effect has occurred");
     fetch(
         "https://brainstormbackend.herokuapp.com/user/logintest/" +
         username +
         "/" +
         password
     )
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          setUsername(data);
-          setPassword(data);
-          // localStorage.setUsername("username", data);
-          // localStorage.setPassword("password", data);
-          console.log(data);
-        });
-    // set the state of the user
 
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setUser(data);
+        console.log("Data = " + JSON.stringify(data))
+        localStorage.setItem("1",data.username);
+        localStorage.setItem("2", data.password);
+        localStorage.setItem("3", data.user_id);
+        console.log(localStorage.getItem("1") + "/" + localStorage.getItem("2") + "/" + localStorage.getItem("3"));
+      });
+    // set the state of the user
+      fetch("https://brainstormbackend.herokuapp.com/user/detailed-course/" + localStorage.getItem("3"))
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("4", data);
+          });
+    console.log("use effect has occurred" + username +"/"+ password);
     // store the user in localStorage
   };
 
@@ -93,55 +87,51 @@ export default function Login() {
                 <h4 className={classes.cardTitleWhite}>Login</h4>
               </CardHeader>
 
-              <CardBody>
+              <form>
+                <CardBody>
                 <GridContainer>
+                  <GridItem xs={12} sm={12} md={3}>
 
-                  <GridItem xs={12} sm={12} md={10}>
                     <label htmlFor="username">Username: </label>
-                  </GridItem>
-                  <GridItem xs={9} sm={9} md={10}>
                     <input
-                        // labelText="Username"
-                        // id="username"
-                        // formControlProps={{
-                        //   fullWidth: true,
-                        // }}
-                        type="text"
-                        required
-                        value={username}
-                        placeholder="enter a username"
-                        onChange={(e) => setUsername(e.target.value)}
+                      // labelText="Username"
+                      // id="username"
+                      // formControlProps={{
+                      //   fullWidth: true,
+                      // }}
+                      type="text"
+                      required
+                      value={user.username}
+                      placeholder="enter a username"
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </GridItem>
-
-
-                  <GridItem xs={12} sm={12} md={10}>
-                    <label htmlFor="password">Password: </label>
-                  </GridItem>
-                  <GridItem xs={12} sm={12} md={10}>
+                  <GridItem xs={12} sm={12} md={6}>
+                    <label htmlFor="password">password: </label>
                     <input
-                        // labelText="Password"
-                        // id="password"
-                        // formControlProps={{
-                        //   fullWidth: true,
-                        // }}
-                        type="password"
-                        required
-                        value={password}
-                        placeholder="enter a password"
-                        onChange={(e) => setPassword(e.target.value)}
+                      // labelText="Password"
+                      // id="password"
+                      // formControlProps={{
+                      //   fullWidth: true,
+                      // }}
+                      type="password"
+                      required
+                      value={user.password}
+                      placeholder="enter a password"
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </GridItem>
                 </GridContainer>
               </CardBody>
 
-              <CardFooter color = "Danger" >
+              <CardFooter>
                 <Button onClick={handleSubmit} color={"danger"}>Login</Button>
               </CardFooter>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}></GridItem>
-        </GridContainer>
-      </div>
+              </form>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={4}></GridItem>
+      </GridContainer>
+    </div>
   );
 }
