@@ -30,7 +30,6 @@ import advSubmit from "./views/AssignmentsPage/advSubmit";
 // core components/views for RTL layout
 import login from "./views/Login_Page/Login";
 import registration from "./views/Registration_Page/Register";
-import advSubmit from './views/AssignmentsPage/advSubmit'
 const dashboardRoutes = [
     {
         path: "/dashboard",

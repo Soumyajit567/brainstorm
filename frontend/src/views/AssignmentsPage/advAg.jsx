@@ -55,24 +55,9 @@ const useStyles = makeStyles(styles);
 
 export default function AdvAg() {
     const classes = useStyles();
-    // const history = useHistory();
     const [ag, setAg] = useState(null);
     const [newAg, setNewAg] = useState(false);
     const [showNewAg, setShowNewAg] = useState(true);
-
-    // const submit = path => {
-    //     history.push(path);
-    // };
-
-   // function submit(){
-   //
-   //       return(
-   //         <div>
-   //             <Link to ="/advSubmit" exact component={advSubmit}></Link>
-   //         </div>
-   //       );
-   //
-   // }
 
     const updateAg = () => {
         setNewAg(s => !s);
@@ -108,46 +93,6 @@ export default function AdvAg() {
     }
 
     const agData = ag && ag.map((ags) => [ags.title, ags.description]);
-
-    // const SubmitAg= event=>{
-    //     // render(){
-    //     //
-    //     // // return(
-    //     // //     <div>
-    //     // //         <Router>
-    //     // //
-    //     // //                 <Switch>
-    //     // //                     <Route path="/advSubmit" exact component={advSubmit}/>
-    //     // //                 </Switch>
-    //     // //
-    //     // //         </Router>
-    //     // //     </div>
-    //     // }
-    //
-    //
-    // }
-
-
-
-                return (
-                <GridContainer>
-                    <GridItem xs={12} sm={12} md={12}>
-                        {ag && (
-                            <Card>
-                                <CardHeader color="danger">
-                                    <h4 className={classes.cardTitleWhite}>Assignments List</h4>
-                                    <p className={classes.cardCategoryWhite}>
-                                        Click on an Assignment to see more details
-                                    </p>
-                                    <button onClick={showAg} className={"createAg"}> course 1 </button>
-
-                                </CardHeader>
-                                <CardBody>
-                                    <ATable
-                                        tableHeaderColor="primary"
-                                        tableHead={["Title", "Content"]}
-                                        tableData={agData}
-
     return (
         <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
@@ -156,11 +101,9 @@ export default function AdvAg() {
                         <CardHeader color="danger">
                             <h4 className={classes.cardTitleWhite}>Assignments List</h4>
                             <p className={classes.cardCategoryWhite}>
-                                Click on an Announcement to see more details
+                                Click on an Assignment to see more details
                             </p>
-                            <button onClick={() => updateAg()} className={"createAg"}> All Courses </button>
-                            <button onClick={() => showAg(4)} className={"createAg"}> Course 4 </button>
-                            <button onClick={() => showAg(5)} className={"createAg"}> Course 5 </button>
+                            <button onClick={showAg} className={"createAg"}> course 1 </button>
 
                         </CardHeader>
                         <CardBody>
@@ -169,21 +112,33 @@ export default function AdvAg() {
                                 tableHead={["Title", "Content"]}
                                 tableData={agData}
 
+
                             />
-                            <label htmlFor="username">Enter Assignment Number: </label>
-                            <input
-                                type="text"
-                                required
-                                placeholder="Enter Homework Number"
-                            />
-                            <label>Write Answer : </label>
-                            <input type="textarea"
-                                   name="textValue"
-                            />
-                            <button> Submit </button>
+                            {/*<label htmlFor="username">Enter Assignment Number: </label>*/}
+                            {/*<input*/}
+                            {/*    // labelText="Username"*/}
+                            {/*    // id="username"*/}
+                            {/*    // formControlProps={{*/}
+                            {/*    //   fullWidth: true,*/}
+                            {/*    // }}*/}
+                            {/*    type="text"*/}
+                            {/*    required*/}
+                            {/*    // value={username}*/}
+                            {/*    placeholder="Enter Homework Number"*/}
+                            {/*    // onChange={(e) => setUsername(e.target.value)}*/}
+                            {/*/>*/}
+                            {/*<label>Write Answer : </label>*/}
+                            {/*<input type="textarea"*/}
+                            {/*       name="textValue"*/}
+                            {/*    // onChange={this.handleChange}*/}
+                            {/*/>*/}
+
+
                         </CardBody>
                     </Card>
+
                 )}
+                {/*<button onClick={submit()}>Submit</button>*/}
                 <button onClick={() => displayNewAg()}>
                     New Assignment
                 </button>
@@ -196,6 +151,9 @@ export default function AdvAg() {
         </GridContainer>
     );
 }
+
+
+
 
 
 
