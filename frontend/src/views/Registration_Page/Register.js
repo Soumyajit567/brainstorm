@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -35,6 +35,25 @@ const useStyles = makeStyles(styles);
 
 export default function Register() {
   const classes = useStyles();
+  // const [usernames, setUsernames] = useState("");
+  // const [passwords, setPasswords] = useState("");
+  // const [ids,setids] = useState("");
+  // const handleSubmit = () => {
+  // console.log("let's start storing users");
+  // fetch("https://brainstormbackend.herokuapp.com/register").then((response) => {
+  //     return response.json();
+  //   })
+  //       .then((data) => {
+  //         // setUsernames(data);
+  //         // usernames.toString(data)
+  //         // setPasswords(data);
+  //         // passwords.toString(data);
+  //         setids(data);
+  //         // localStorage.setUsername("username", data);
+  //         // localStorage.setPassword("password", data);
+  //         console.log(data);
+  //       });
+  // };
   // const [role, setRole] = useState("");
   // //
   // const handleChange = (role) => {
@@ -107,7 +126,7 @@ export default function Register() {
             </CardFooter>
 
             <CardFooter>
-              <Button color="danger">Register</Button>
+              <Button color={"danger"}>Register</Button>
             </CardFooter>
           </Card>
         </GridItem>

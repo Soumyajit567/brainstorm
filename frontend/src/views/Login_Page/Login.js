@@ -135,8 +135,8 @@ export default function Login() {
                 </GridContainer>
               </CardBody>
 
-              <CardFooter>
-                <Button onClick={handleSubmit}>Login</Button>
+              <CardFooter color = "Danger" >
+                <Button onClick={handleSubmit} color={"danger"}>Login</Button>
               </CardFooter>
             </Card>
           </GridItem>
