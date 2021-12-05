@@ -4,22 +4,20 @@ import { useState } from "react";
 const NewCourse = (props) => {
 
     const [title, setTitle] = useState('');
-    const [courseNum, setCourseNum] = useState('')
-    const [content, setContent] = useState('');
-    const [prof, setProf] = useState('');
+    const [description, setDescription] = useState('');
 
     //creates a new course
     const createCourse = (e) => {
         e.preventDefault();
-        const course = {title, courseNum, content, prof};
+        const course = {title, description};
 
-        fetch('brainstormbackend.herokuapp.com/course', {
+        console.log('new course created')
+        fetch('https://brainstormbackend.herokuapp.com/course/', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(course)
         }).then(() => {
             props.setNewCourse(!props.newCourse)
-            console.log('new course created')
         })
 
     }
@@ -35,24 +33,12 @@ const NewCourse = (props) => {
                     required
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}/>
-                <label className={"courseInputs"}> Course Number: </label>
-                <input
-                    type={"text"}
-                    required
-                    value={courseNum}
-                    onChange={(e) => setCourseNum(e.target.value)}/>
+
                 <label className={"courseInputs"}> Course Details: </label>
                 <textarea
                     required
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
-                />
-                <label className={"courseInputs"}> Course Instructor: </label>
-                <input
-                    type={"text"}
-                    required
-                    value={prof}
-                    onChange={(e) => setProf(e.target.value)}
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                 />
                 <button className={"createCourse"}> Create Course </button>
             </form>

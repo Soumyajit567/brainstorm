@@ -45,6 +45,7 @@ export default function CustomTable(props) {
                     </TableCell>
                   );
                 })}
+                <button> Submit </button>
               </TableRow>
             );
           })}

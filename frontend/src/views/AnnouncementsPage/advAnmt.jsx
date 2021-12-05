@@ -46,6 +46,9 @@ export default function AdvAnmt() {
   const [anmt, setAnmt] = useState(null);
   const [newAnmt, setNewAnmt] = useState(false);
   const [showNewAnmt, setShowNewAnmt] = useState(true);
+  const [courseIDs, setCourseIDs] = useState('');
+
+  setCourseIDs(localStorage.getItem("4"));
 
   const updateAnmts = () => {
     setNewAnmt(true);
@@ -55,10 +58,19 @@ export default function AdvAnmt() {
     setShowNewAnmt(s => !s)
   }
 
+  function makeButton(c) {
+    return (
+        <button
+            onClick={() => showAnmt(c.id)}>
+          {c.title}
+        </button>
+    );
+  }
+
   //fetches data on the first render
   useEffect(() => {
     console.log("use effect has occurred");
-    fetch("https://brainstormbackend.herokuapp.com/anmts/")
+    fetch("https://brainstormbackend.herokuapp.com/user/anmt/" + localStorage.getItem("3"))
       .then((response) => {
         return response.json();
       })
@@ -68,9 +80,11 @@ export default function AdvAnmt() {
       });
   }, [newAnmt]);
 
-  const showAnmt = () => {
+
+
+  const showAnmt = (e) => {
     console.log("use effect has occurred");
-    fetch("https://brainstormbackend.herokuapp.com/course/anmt/4")
+    fetch("https://brainstormbackend.herokuapp.com/course/anmt/" + e)
         .then((response) => {
           return response.json();
         })
@@ -83,6 +97,8 @@ export default function AdvAnmt() {
   const anmtData =
     anmt && anmt.map((anmts) => [anmts.title, anmts.description]);
 
+
+
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
@@ -91,9 +107,8 @@ export default function AdvAnmt() {
             <CardHeader color="danger">
               <h4 className={classes.cardTitleWhite}>Announcement List</h4>
               <p className={classes.cardCategoryWhite}>
-                Click on an Announcement to see more details
+                Click on a Course button to filter your Announcements
               </p>
-              <button onClick={showAnmt} className={"createAnmt"}> course 1 </button>
 
             </CardHeader>
             <CardBody>
@@ -120,4 +135,5 @@ export default function AdvAnmt() {
 
 /*
 "https:brainstormbackend.herokuapp.com/course/anmt/5
+// {courseIDs.map((c) => makeButton(c))}
  */

@@ -37,93 +37,104 @@ import advChat from "./views/ChatPage/advChat";
 // core components/views for RTL layout
 import login from "./views/Login_Page/Login";
 import registration from "./views/Registration_Page/Register";
+
+
 const dashboardRoutes = [
-  {
-    path: "/dashboard",
-    name: "Dashboard",
-    icon: Dashboard,
-    component: DashboardPage,
-    layout: "/admin",
-  },
-  {
-    path: "/login",
-    name: "Login",
-    icon: Person,
-    component: login,
-    layout: "/admin",
-  },
-  {
-    path: "/user",
-    name: "Register",
-    icon: Person,
-    component: registration,
-    layout: "/admin",
-  },
-  {
-    path: "/Courses",
-    name: "Courses",
-    icon: Assignment,
-    component: advCourse,
-    layout: "/admin",
-  },
-  {
-    path: "/Anmt",
-    name: "Announcements",
-    courses: ["poop", "butt"],
-    icon: Assignment,
-    component: AdvAnmt,
-    layout: "/admin",
-  },
-  {
-    path: "/Ag",
-    name: "Assignments",
-    courses: ["Software", "Engineering"],
-    icon: Assignment,
-    component: AdvAg,
-    layout: "/admin",
-  },
-  {
-    path: "/Chat",
-    name: "Chat",
-    icon: Assignment,
-    component: advChat,
-    layout: "/admin",
-  },
-  {
-    path: "/Search",
-    name: "Search",
-    icon: Assignment,
-    component: advSearch,
-    layout: "/admin",
-  },
-  {
-    path: "/table",
-    name: "Table List",
-    icon: Assignment,
-    component: TableList,
-    layout: "/admin",
-  },
-  {
-    path: "/typography",
-    name: "Typography",
-    icon: LibraryBooks,
-    component: Typography,
-    layout: "/admin",
-  },
-  {
-    path: "/icons",
-    name: "Icons",
-    icon: BubbleChart,
-    component: Icons,
-    layout: "/admin",
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    icon: Notifications,
-    component: NotificationsPage,
-    layout: "/admin",
-  },
+    {
+      path: "/dashboard",
+      name: "Dashboard",
+      icon: Dashboard,
+      component: DashboardPage,
+      layout: "/admin",
+    },
+    {
+      path: "/login",
+      name: "Login",
+      icon: Person,
+      component: login,
+      layout: "/admin",
+    },
+    {
+      path: "/register",
+      name: "Register",
+      icon: Person,
+      component: registration,
+      layout: "/admin",
+    }, {
+      path: "/user",
+      name: "User Profile",
+      icon: Person,
+      component: UserProfile,
+      layout: "/admin",
+    },
+    {
+      path: "/Courses",
+      name: "Courses",
+      icon: Assignment,
+      component: advCourse,
+      layout: "/admin",
+    },
+    {
+      path: "/Anmt",
+      name: "Announcements",
+      courses: ["poop", "butt"],
+      icon: Assignment,
+      component: AdvAnmt,
+      layout: "/admin",
+    },
+    {
+      path: "/Ag",
+      name: "Assignments",
+      courses: ["Software", "Engineering"],
+      icon: Assignment,
+      component: AdvAg,
+      layout: "/admin",
+    },
+    {
+      path: "/Chat",
+      name: "Chat",
+      icon: Assignment,
+      component: advChat,
+      layout: "/admin",
+    },
+    {
+      path: "/Search",
+      name: "Search",
+      icon: Assignment,
+      component: advSearch,
+      layout: "/admin",
+    },
+    {
+      path: "/table",
+      name: "Table List",
+      icon: Assignment,
+      component: TableList,
+      layout: "/admin",
+    },
+    {
+      path: "/typography",
+      name: "Typography",
+      icon: LibraryBooks,
+      component: Typography,
+      layout: "/admin",
+    },
+    {
+      path: "/icons",
+      name: "Icons",
+      icon: BubbleChart,
+      component: Icons,
+      layout: "/admin",
+    },
+    {
+      path: "/notifications",
+      name: "Notifications",
+      icon: Notifications,
+      component: NotificationsPage,
+      layout: "/admin",
+    }
 ];
+
+
+
 
 export default dashboardRoutes;

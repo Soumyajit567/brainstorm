@@ -1,7 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
 // core components
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -43,6 +42,27 @@ export default function Register() {
   // const handleChange = (e) => {
   //   setRole(e.target.value);
   // };
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [first_name, setFirst_Name] = useState('turd');
+  const [last_name, setLast_Name] = useState('sandwich');
+  const [email, setEmail] = useState('turdsandwich@poop.com');
+  const [role, setRole] = useState("INSTRUCTOR");
+
+
+
+  const registerUser = (e) => {
+    const user = {username, password, first_name, last_name, email, role};
+    console.log("bruh trying to register")
+    fetch('https://brainstormbackend.herokuapp.com/user/register', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(user)
+    })
+
+  }
+
   return (
     <div>
       <GridContainer>
@@ -54,47 +74,66 @@ export default function Register() {
             <CardBody>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Username"
-                    id="username"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
+                  <label htmlFor="username">Username: </label>
+                  <input
+                      // labelText="Username"
+                      // id="username"
+                      // formControlProps={{
+                      //   fullWidth: true,
+                      // }}
+                      type="text"
+                      required
+                      value={username}
+                      placeholder="enter a username"
+                      onChange={(e) => setUsername(e.target.value)}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="Password"
-                    id="last-name"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
+                  <label htmlFor="password">password: </label>
+                  <input
+                      // labelText="Password"
+                      // id="password"
+                      // formControlProps={{
+                      //   fullWidth: true,
+                      // }}
+                      type="password"
+                      required
+                      value={password}
+                      placeholder="enter a password"
+                      onChange={(e) => setPassword(e.target.value)}
                   />
                 </GridItem>
               </GridContainer>
             </CardBody>
 
-            <form>
-              <input
-                type="radio"
-                value="instructor"
-                id="instructor"
-                // onChange={handleChange}
-                name="role"
-              />
-              <label htmlFor="instructor">Instructor</label>
-              <input
-                type="radio"
-                value="student"
-                id="student"
-                // onChange={handleChange}
-                name="role"
-              />
-              <label htmlFor="student">Student</label>
-            </form>
+            <CardFooter>
+              <form>
+                <label htmlFor="instructor">Instructor</label>
+
+                <input
+                    type="radio"
+                    value="instructor"
+                    id="instructor"
+                    // onChange={handleChange}
+                    name="role"
+
+                />
+
+                <label htmlFor="student">Student</label>
+                <input
+                    type="radio"
+                    value="student"
+                    id="student"
+                    // onChange={handleChange}
+                    name="role"
+                />
+
+
+              </form>
+            </CardFooter>
 
             <CardFooter>
-              <Button color="danger">Register</Button>
+              <Button onClick={registerUser} color="danger">Register</Button>
             </CardFooter>
           </Card>
         </GridItem>
