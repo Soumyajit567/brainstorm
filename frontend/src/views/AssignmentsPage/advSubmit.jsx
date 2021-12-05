@@ -52,11 +52,12 @@ export default function AdvAg() {
         e.preventDefault();
         const ag = {hwno, answer};
         console.log("posting a new submission")
-        fetch('https://brainstormbackend.herokuapp.com/asgmt-sub/' + ag.hwno +"/"+ 7,{
+        fetch('https://brainstormbackend.herokuapp.com/asgmt-sub/' + ag.hwno +"/"+ 11,{
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(ag)
         }).then(() => {
+            console.log("done")
             props.setNewAg(!props.newAg)
             console.log('new submission added')
         })
@@ -76,6 +77,7 @@ export default function AdvAg() {
                             required
                             value={hwno}
                             placeholder="Enter Homework Number"
+                            onChange={(e) => sethwno(e.target.value)}
                             // onChange={(e) => setUsername(e.target.value)}
                         />
                         <label htmlFor="Answer">Answer</label>
@@ -83,6 +85,8 @@ export default function AdvAg() {
                             type = {"text"}
                             required
                             value={answer}
+                            placeholder="Enter your Answer"
+                            onChange={(e) => setAnswer(e.target.value)}
                             // onChange={(e) => setDescription(e.target.value)}
                         />
 

@@ -87,51 +87,55 @@ export default function Login() {
                 <h4 className={classes.cardTitleWhite}>Login</h4>
               </CardHeader>
 
-              <form>
-                <CardBody>
+              <CardBody>
                 <GridContainer>
-                  <GridItem xs={12} sm={12} md={3}>
 
+                  <GridItem xs={12} sm={12} md={10}>
                     <label htmlFor="username">Username: </label>
+                  </GridItem>
+                  <GridItem xs={9} sm={9} md={10}>
                     <input
-                      // labelText="Username"
-                      // id="username"
-                      // formControlProps={{
-                      //   fullWidth: true,
-                      // }}
-                      type="text"
-                      required
-                      value={user.username}
-                      placeholder="enter a username"
-                      onChange={(e) => setUsername(e.target.value)}
+                        // labelText="Username"
+                        // id="username"
+                        // formControlProps={{
+                        //   fullWidth: true,
+                        // }}
+                        type="text"
+                        required
+                        value={username}
+                        placeholder="enter a username"
+                        onChange={(e) => setUsername(e.target.value)}
                     />
                   </GridItem>
-                  <GridItem xs={12} sm={12} md={6}>
-                    <label htmlFor="password">password: </label>
+
+
+                  <GridItem xs={12} sm={12} md={10}>
+                    <label htmlFor="password">Password: </label>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={10}>
                     <input
-                      // labelText="Password"
-                      // id="password"
-                      // formControlProps={{
-                      //   fullWidth: true,
-                      // }}
-                      type="password"
-                      required
-                      value={user.password}
-                      placeholder="enter a password"
-                      onChange={(e) => setPassword(e.target.value)}
+                        // labelText="Password"
+                        // id="password"
+                        // formControlProps={{
+                        //   fullWidth: true,
+                        // }}
+                        type="password"
+                        required
+                        value={password}
+                        placeholder="enter a password"
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                   </GridItem>
                 </GridContainer>
               </CardBody>
 
-              <CardFooter>
+              <CardFooter color = "Danger" >
                 <Button onClick={handleSubmit} color={"danger"}>Login</Button>
               </CardFooter>
-              </form>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}></GridItem>
-      </GridContainer>
-    </div>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}></GridItem>
+        </GridContainer>
+      </div>
   );
 }

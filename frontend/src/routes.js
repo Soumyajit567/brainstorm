@@ -82,6 +82,13 @@ const dashboardRoutes = [
         layout: "/admin",
     },
     {
+        path: "/as",
+        name: "Submission",
+        icon: Assignment,
+        component: advSubmit,
+        layout: "/admin",
+    },
+    {
         path: "/Chat",
         name: "Chat",
         icon: Assignment,

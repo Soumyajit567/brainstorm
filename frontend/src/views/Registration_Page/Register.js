@@ -83,84 +83,75 @@ export default function Register() {
   }
 
   return (
-    <div>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
-          <Card>
-            <CardHeader color="danger">
-              <h4 className={classes.cardTitleWhite}>Register</h4>
-            </CardHeader>
-            <CardBody>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={3}>
-                  <label htmlFor="username">Username: </label>
+      <div>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={8}>
+            <Card>
+              <CardHeader color="danger">
+                <h4 className={classes.cardTitleWhite}>Register</h4>
+              </CardHeader>
+              <CardBody>
+                <GridContainer>
+                  <GridItem xs={12} sm={12} md={3}>
+                    <CustomInput
+                        labelText="Username"
+                        id="username"
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                    />
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={6}>
+                    <CustomInput
+                        labelText="Password"
+                        id="last-name"
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                    />
+                  </GridItem>
+
+                </GridContainer>
+              </CardBody>
+
+              <CardFooter>
+                <form>
+                  <label htmlFor="instructor">Instructor</label>
+
                   <input
-                      // labelText="Username"
-                      // id="username"
-                      // formControlProps={{
-                      //   fullWidth: true,
-                      // }}
-                      type="text"
-                      required
-                      value={username}
-                      placeholder="enter a username"
-                      onChange={(e) => setUsername(e.target.value)}
+                      type="radio"
+                      value="instructor"
+                      id="instructor"
+                      // onChange={handleChange}
+                      name="role"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
                   />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <label htmlFor="password">password: </label>
+
+                  <label htmlFor="student">Student</label>
                   <input
-                      // labelText="Password"
-                      // id="password"
-                      // formControlProps={{
-                      //   fullWidth: true,
-                      // }}
-                      type="password"
-                      required
-                      value={password}
-                      placeholder="enter a password"
-                      onChange={(e) => setPassword(e.target.value)}
+                      type="radio"
+                      value="student"
+                      id="student"
+                      // onChange={handleChange}
+                      name="role"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
                   />
-                </GridItem>
-
-              </GridContainer>
-            </CardBody>
-
-            <CardFooter>
-              <form>
-                <label htmlFor="instructor">Instructor</label>
-
-                <input
-                    type="radio"
-                    value="instructor"
-                    id="instructor"
-                    // onChange={handleChange}
-                    name="role"
-                />
-
-                <label htmlFor="student">Student</label>
-                <input
-                    type="radio"
-                    value="student"
-                    id="student"
-                    // onChange={handleChange}
-                    name="role"
-                />
 
 
-              </form>
-            </CardFooter>
+                </form>
+              </CardFooter>
 
-            <CardFooter>
-
-
-              <Button onClick={registerUser} color="danger">Register</Button>
-
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}></GridItem>
-      </GridContainer>
-    </div>
+              <CardFooter>
+                <Button color={"danger"}>Register</Button>
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}></GridItem>
+        </GridContainer>
+      </div>
   );
 }
