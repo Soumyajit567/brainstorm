@@ -53,6 +53,7 @@ export default function AdvAg() {
         const ag = {hwno, answer};
         console.log("posting a new submission")
         fetch('https://brainstormbackend.herokuapp.com/asgmt-sub/' + ag.hwno +"/"+ 11,{
+
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(ag)
@@ -87,6 +88,7 @@ export default function AdvAg() {
                             value={answer}
                             placeholder="Enter your Answer"
                             onChange={(e) => setAnswer(e.target.value)}
+
                             // onChange={(e) => setDescription(e.target.value)}
                         />
 

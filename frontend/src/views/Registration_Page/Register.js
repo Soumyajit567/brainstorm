@@ -119,26 +119,22 @@ export default function Register() {
                   <label htmlFor="instructor">Instructor</label>
 
                   <input
-                      type="radio"
-                      value="instructor"
-                      id="instructor"
-                      // onChange={handleChange}
-                      name="role"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
+
+                      type="text"
+                      required
+                      value={username}
+                      placeholder="enter a username"
+                      onChange={(e) => setUsername(e.target.value)}
                   />
 
                   <label htmlFor="student">Student</label>
                   <input
-                      type="radio"
-                      value="student"
-                      id="student"
-                      // onChange={handleChange}
-                      name="role"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
+
+                      type="password"
+                      required
+                      value={password}
+                      placeholder="enter a password"
+                      onChange={(e) => setPassword(e.target.value)}
                   />
 
 

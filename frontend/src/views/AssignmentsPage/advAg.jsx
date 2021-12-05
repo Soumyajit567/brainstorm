@@ -75,7 +75,7 @@ export default function AdvAg() {
    // }
 
     const updateAg = () => {
-        setNewAg(true);
+        setNewAg(s => !s);
     };
 
     const displayNewAg = () => {
@@ -95,9 +95,9 @@ export default function AdvAg() {
             });
     }, [newAg]);
 
-    const showAg = () => {
+    const showAg = (e) => {
         console.log("use effect has occurred");
-        fetch("https://brainstormbackend.herokuapp.com/asgmt/1")
+        fetch("https://brainstormbackend.herokuapp.com/course/asgmts/" + e)
             .then((response) => {
                 return response.json();
             })
@@ -107,8 +107,7 @@ export default function AdvAg() {
             });
     }
 
-    const agData =
-        ag && ag.map((ags) => [ags.title, ags.description]);
+    const agData = ag && ag.map((ags) => [ags.title, ags.description]);
 
     // const SubmitAg= event=>{
     //     // render(){
@@ -149,44 +148,53 @@ export default function AdvAg() {
                                         tableHead={["Title", "Content"]}
                                         tableData={agData}
 
+    return (
+        <GridContainer>
+            <GridItem xs={12} sm={12} md={12}>
+                {ag && (
+                    <Card>
+                        <CardHeader color="danger">
+                            <h4 className={classes.cardTitleWhite}>Assignments List</h4>
+                            <p className={classes.cardCategoryWhite}>
+                                Click on an Announcement to see more details
+                            </p>
+                            <button onClick={() => updateAg()} className={"createAg"}> All Courses </button>
+                            <button onClick={() => showAg(4)} className={"createAg"}> Course 4 </button>
+                            <button onClick={() => showAg(5)} className={"createAg"}> Course 5 </button>
 
-                                    />
-                                    {/*<label htmlFor="username">Enter Assignment Number: </label>*/}
-                                    {/*<input*/}
-                                    {/*    // labelText="Username"*/}
-                                    {/*    // id="username"*/}
-                                    {/*    // formControlProps={{*/}
-                                    {/*    //   fullWidth: true,*/}
-                                    {/*    // }}*/}
-                                    {/*    type="text"*/}
-                                    {/*    required*/}
-                                    {/*    // value={username}*/}
-                                    {/*    placeholder="Enter Homework Number"*/}
-                                    {/*    // onChange={(e) => setUsername(e.target.value)}*/}
-                                    {/*/>*/}
-                                    {/*<label>Write Answer : </label>*/}
-                                    {/*<input type="textarea"*/}
-                                    {/*       name="textValue"*/}
-                                    {/*    // onChange={this.handleChange}*/}
-                                    {/*/>*/}
+                        </CardHeader>
+                        <CardBody>
+                            <ATable
+                                tableHeaderColor="primary"
+                                tableHead={["Title", "Content"]}
+                                tableData={agData}
 
-
-                                </CardBody>
-                            </Card>
-
-                        )}
-                        {/*<button onClick={submit()}>Submit</button>*/}
-                        <button onClick={() => displayNewAg()}>
-                            New Assignment
-                        </button>
-                        {showNewAg ? (
-                            console.log("newAg is hidden!")
-                        ) : (
-                            <NewAg newAg={newAg} setNewAg={setNewAg} />
-                        )}
-                    </GridItem>
-                </GridContainer>
-                );
+                            />
+                            <label htmlFor="username">Enter Assignment Number: </label>
+                            <input
+                                type="text"
+                                required
+                                placeholder="Enter Homework Number"
+                            />
+                            <label>Write Answer : </label>
+                            <input type="textarea"
+                                   name="textValue"
+                            />
+                            <button> Submit </button>
+                        </CardBody>
+                    </Card>
+                )}
+                <button onClick={() => displayNewAg()}>
+                    New Assignment
+                </button>
+                {showNewAg ? (
+                    console.log("newAg is hidden!")
+                ) : (
+                    <NewAg newAg={newAg} setNewAg={setNewAg} />
+                )}
+            </GridItem>
+        </GridContainer>
+    );
 }
 
 

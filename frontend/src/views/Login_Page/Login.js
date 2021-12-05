@@ -12,6 +12,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import axios from "axios";
+import {forEach} from "react-bootstrap/ElementChildren";
 
 const styles = {
   cardCategoryWhite: {
@@ -67,9 +68,10 @@ export default function Login() {
           })
           .then((data) => {
             console.log(data);
+            //const cIDs = data.map((d) => d.courseID)
             localStorage.setItem("4", data);
+            console.log("use effect has occurred" + username +"/"+ password + "/" + localStorage.getItem("4"));
           });
-    console.log("use effect has occurred" + username +"/"+ password);
     // store the user in localStorage
   };
 
@@ -88,6 +90,7 @@ export default function Login() {
               </CardHeader>
 
               <CardBody>
+
                 <GridContainer>
 
                   <GridItem xs={12} sm={12} md={10}>
@@ -105,6 +108,7 @@ export default function Login() {
                         value={username}
                         placeholder="enter a username"
                         onChange={(e) => setUsername(e.target.value)}
+
                     />
                   </GridItem>
 
@@ -124,6 +128,7 @@ export default function Login() {
                         value={password}
                         placeholder="enter a password"
                         onChange={(e) => setPassword(e.target.value)}
+
                     />
                   </GridItem>
                 </GridContainer>
