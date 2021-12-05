@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import Table from "components/Table/Table.js";
+import ATable from "components/Table/ATable"
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
@@ -48,7 +48,7 @@ export default function AdvAg() {
     const [showNewAg, setShowNewAg] = useState(true);
 
     const updateAg = () => {
-        setNewAg(true);
+        setNewAg(s => !s);
     };
 
     const displayNewAg = () => {
@@ -68,9 +68,9 @@ export default function AdvAg() {
             });
     }, [newAg]);
 
-    const showAg = () => {
+    const showAg = (e) => {
         console.log("use effect has occurred");
-        fetch("https://brainstormbackend.herokuapp.com/asgmt/1")
+        fetch("https://brainstormbackend.herokuapp.com/course/asgmts/" + e)
             .then((response) => {
                 return response.json();
             })
@@ -80,8 +80,7 @@ export default function AdvAg() {
             });
     }
 
-    const agData =
-        ag && ag.map((ags) => [ags.title, ags.description]);
+    const agData = ag && ag.map((ags) => [ags.title, ags.description]);
 
 
 
@@ -95,11 +94,13 @@ export default function AdvAg() {
                             <p className={classes.cardCategoryWhite}>
                                 Click on an Announcement to see more details
                             </p>
-                            <button onClick={showAg} className={"createAg"}> course 1 </button>
+                            <button onClick={() => updateAg()} className={"createAg"}> All Courses </button>
+                            <button onClick={() => showAg(4)} className={"createAg"}> Course 4 </button>
+                            <button onClick={() => showAg(5)} className={"createAg"}> Course 5 </button>
 
                         </CardHeader>
                         <CardBody>
-                            <Table
+                            <ATable
                                 tableHeaderColor="primary"
                                 tableHead={["Title", "Content"]}
                                 tableData={agData}
@@ -107,21 +108,13 @@ export default function AdvAg() {
                             />
                             <label htmlFor="username">Enter Assignment Number: </label>
                             <input
-                                // labelText="Username"
-                                // id="username"
-                                // formControlProps={{
-                                //   fullWidth: true,
-                                // }}
                                 type="text"
                                 required
-                                // value={username}
                                 placeholder="Enter Homework Number"
-                                // onChange={(e) => setUsername(e.target.value)}
                             />
                             <label>Write Answer : </label>
                             <input type="textarea"
                                    name="textValue"
-                                   // onChange={this.handleChange}
                             />
                             <button> Submit </button>
                         </CardBody>

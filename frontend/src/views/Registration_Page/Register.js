@@ -76,11 +76,6 @@ export default function Register() {
                 <GridItem xs={12} sm={12} md={3}>
                   <label htmlFor="username">Username: </label>
                   <input
-                      // labelText="Username"
-                      // id="username"
-                      // formControlProps={{
-                      //   fullWidth: true,
-                      // }}
                       type="text"
                       required
                       value={username}
@@ -91,11 +86,6 @@ export default function Register() {
                 <GridItem xs={12} sm={12} md={6}>
                   <label htmlFor="password">password: </label>
                   <input
-                      // labelText="Password"
-                      // id="password"
-                      // formControlProps={{
-                      //   fullWidth: true,
-                      // }}
                       type="password"
                       required
                       value={password}

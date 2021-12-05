@@ -61,7 +61,20 @@ export default function advChat() {
                 console.log(data);
                 setMsg(data);
             });
-    });
+    },[]);
+
+    const showChat = (e) => {
+        e.preventDefault
+        console.log("use effect has occurred");
+        fetch("https://brainstormbackend.herokuapp.com/course/msgs/" + e)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log(data);
+                setMsg(data);
+            });
+    }
 
     const msgData =
         msg && msg.map((msgs) => [msgs.text, msgs.username]);
@@ -72,10 +85,11 @@ export default function advChat() {
                 {msg && (
                     <Card>
                         <CardHeader color="danger">
-                            <h4 className={classes.cardTitleWhite}>Announcement List</h4>
-                            <p className={classes.cardCategoryWhite}>
-                                Click on an Announcement to see more details
-                            </p>
+                            <h4 className={classes.cardTitleWhite}>Chat List</h4>
+
+                            <button onClick={() => showChat(4)} className={"createAnmt"}> Course 4 </button>
+                            <button onClick={() => showChat(5)} className={"createAnmt"}> Course 5 </button>
+
                         </CardHeader>
                         <CardBody>
                             <Table

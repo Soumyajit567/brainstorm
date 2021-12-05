@@ -43,7 +43,7 @@ const useStyles = makeStyles(styles);
 
 export default function advSearch() {
   const classes = useStyles();
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState(['']);
   const [searchInput, setNewSearchInput] = useState('');
 
 
@@ -62,7 +62,7 @@ export default function advSearch() {
   const showAnmtResults = () => {
     console.log("we want to see Search Results!")
     fetch(
-        "https://brainstormbackend.herokuapp.com/user/search/7/anmts/" + searchInput
+        "https://brainstormbackend.herokuapp.com/user/search/" + localStorage.getItem("3") + "/anmts/" + searchInput
     ).then((response) => {
       return response.json();
     })

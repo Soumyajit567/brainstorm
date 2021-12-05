@@ -12,6 +12,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import axios from "axios";
+import {forEach} from "react-bootstrap/ElementChildren";
 
 const styles = {
   cardCategoryWhite: {
@@ -66,9 +67,10 @@ export default function Login() {
           })
           .then((data) => {
             console.log(data);
+            //const cIDs = data.map((d) => d.courseID)
             localStorage.setItem("4", data);
+            console.log("use effect has occurred" + username +"/"+ password + "/" + localStorage.getItem("4"));
           });
-    console.log("use effect has occurred" + username +"/"+ password);
     // store the user in localStorage
   };
 
@@ -85,8 +87,6 @@ export default function Login() {
             <CardHeader color="danger">
               <h4 className={classes.cardTitleWhite}>Login</h4>
             </CardHeader>
-
-
               <form>
                 <CardBody>
                 <GridContainer>
@@ -94,11 +94,6 @@ export default function Login() {
 
                     <label htmlFor="username">Username: </label>
                     <input
-                      // labelText="Username"
-                      // id="username"
-                      // formControlProps={{
-                      //   fullWidth: true,
-                      // }}
                       type="text"
                       required
                       value={user.username}
@@ -109,11 +104,6 @@ export default function Login() {
                   <GridItem xs={12} sm={12} md={6}>
                     <label htmlFor="password">password: </label>
                     <input
-                      // labelText="Password"
-                      // id="password"
-                      // formControlProps={{
-                      //   fullWidth: true,
-                      // }}
                       type="password"
                       required
                       value={user.password}

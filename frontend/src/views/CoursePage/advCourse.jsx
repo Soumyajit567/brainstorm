@@ -50,7 +50,7 @@ export default function advCourse() {
   const [showNewCourse, setShowNewCourse] = useState(true);
 
   const updateCourse = () => {
-    setNewCourse(true);
+    setNewCourse(s => !s);
   };
 
   const displayNewCourse = () => {
@@ -71,6 +71,19 @@ export default function advCourse() {
       });
   }, [newCourse]);
 
+  const showCourse = (e) => {
+    e.preventDefault
+    console.log("use effect has occurred");
+    fetch("https://brainstormbackend.herokuapp.com/user/detailed-course/" + localStorage.getItem("3") +"/" + e)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log("individual course data = " + JSON.stringify(data));
+          setCourse(data);
+        });
+  }
+
   const courseData =
     course && course.map((course) => [
         course.courseTitle,
@@ -87,6 +100,10 @@ export default function advCourse() {
             <p className={classes.cardCategoryWhite}>
               Click on a course to see more details
             </p>
+            <button onClick={() => {updateCourse()}}> All Courses</button>
+            <button onClick={() => showCourse(4)} className={"createAnmt"}> Course 4 </button>
+            <button onClick={() => showCourse(5)} className={"createAnmt"}> Course 5 </button>
+
           </CardHeader>
           <CardBody>
             {course && (
@@ -97,7 +114,8 @@ export default function advCourse() {
               />
             )}
           </CardBody>
-        </Card><button onClick={() => displayNewCourse()}>
+        </Card>
+        <button onClick={() => displayNewCourse()}>
         New Course
       </button>
         {showNewCourse ? (
