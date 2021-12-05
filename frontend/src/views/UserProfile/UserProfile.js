@@ -39,28 +39,10 @@ export default function UserProfile() {
     <div>
       <GridContainer>
         <GridItem xs={12} sm={12} md={8}>
-          <Card>
             <CardHeader color="danger">
               <h4 className={classes.cardTitleWhite}>Hello {localStorage.getItem("1")}</h4>
-              <p className={classes.cardCategoryWhite}>Edit your Profile</p>
             </CardHeader>
-            <CardBody>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Username"
-                    id="username"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-            </CardBody>
-            <CardFooter>
-              <Button color="danger">Update Profile</Button>
-            </CardFooter>
-          </Card>
+
         </GridItem>
         <GridItem xs={12} sm={12} md={4}></GridItem>
       </GridContainer>

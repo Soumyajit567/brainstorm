@@ -19,8 +19,6 @@ import Assignment from "@material-ui/icons/Assignment";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
-import TableList from "views/TableList/TableList.js";
-import Typography from "views/Typography/Typography.js";
 import advCourse from "./views/CoursePage/advCourse";
 import AdvAnmt from "./views/AnnouncementsPage/advAnmt";
 import AdvAg from "./views/AssignmentsPage/advAg"
@@ -30,6 +28,7 @@ import advSubmit from "./views/AssignmentsPage/advSubmit";
 // core components/views for RTL layout
 import login from "./views/Login_Page/Login";
 import registration from "./views/Registration_Page/Register";
+import AdvSubmission from "./views/SubmissionsPage/advSubmission";
 const dashboardRoutes = [
     {
         path: "/dashboard",
@@ -82,13 +81,6 @@ const dashboardRoutes = [
         layout: "/admin",
     },
     {
-        path: "/as",
-        name: "Submission",
-        icon: Assignment,
-        component: advSubmit,
-        layout: "/admin",
-    },
-    {
         path: "/Chat",
         name: "Chat",
         icon: Assignment,
@@ -103,24 +95,18 @@ const dashboardRoutes = [
         layout: "/admin",
     },
     {
+        path: "/Submissions",
+        name: "Submissions",
+        icon: Assignment,
+        component: AdvSubmission,
+        layout: "/admin",
+    },
+
+    {
         path: "/as",
         name: "Submit",
         icon: Assignment,
         component: advSubmit,
-        layout: "/admin",
-    },
-    {
-        path: "/table",
-        name: "Table List",
-        icon: Assignment,
-        component: TableList,
-        layout: "/admin",
-    },
-    {
-        path: "/typography",
-        name: "Typography",
-        icon: LibraryBooks,
-        component: Typography,
         layout: "/admin",
     },
 ];

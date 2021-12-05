@@ -44,14 +44,16 @@ const styles = {
 export default function AdvAg() {
     // const useStyles = makeStyles(styles);
     const [hwno, sethwno] = useState('');
-    const [answer, setAnswer] = useState('');
+    const [textSubmission, setTextSubmission] = useState('');
 
 
 
     const createAg = (e) => {
         e.preventDefault();
-        const ag = {hwno, answer};
+        const ag = {hwno, textSubmission};
         console.log("posting a new submission")
+        console.log("homework number = " + hwno)
+        console.log("answer = " + textSubmission)
         fetch('https://brainstormbackend.herokuapp.com/asgmt-sub/' + ag.hwno +"/"+ 11,{
 
             method: 'POST',
@@ -59,12 +61,9 @@ export default function AdvAg() {
             body: JSON.stringify(ag)
         }).then(() => {
             console.log("done")
-            props.setNewAg(!props.newAg)
             console.log('new submission added')
         })
     }
-
-
     const useStyles = makeStyles(styles);
 
     return(
@@ -79,20 +78,17 @@ export default function AdvAg() {
                             value={hwno}
                             placeholder="Enter Homework Number"
                             onChange={(e) => sethwno(e.target.value)}
-                            // onChange={(e) => setUsername(e.target.value)}
                         />
                         <label htmlFor="Answer">Answer</label>
                         <textarea
-                            type = {"text"}
+                            type={"text"}
                             required
-                            value={answer}
+                            value={textSubmission}
                             placeholder="Enter your Answer"
-                            onChange={(e) => setAnswer(e.target.value)}
-
-                            // onChange={(e) => setDescription(e.target.value)}
+                            onChange={(e) => setTextSubmission(e.target.value)}
                         />
 
-                        <button className={"createAg"}>Submit</button>
+                        <button onClick={createAg} className={"createAg"}>Submit</button>
                     </Card>
                 </GridItem>
             </GridContainer>
