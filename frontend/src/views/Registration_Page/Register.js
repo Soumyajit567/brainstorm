@@ -34,6 +34,25 @@ const useStyles = makeStyles(styles);
 
 export default function Register() {
   const classes = useStyles();
+  // const [usernames, setUsernames] = useState("");
+  // const [passwords, setPasswords] = useState("");
+  // const [ids,setids] = useState("");
+  // const handleSubmit = () => {
+  // console.log("let's start storing users");
+  // fetch("https://brainstormbackend.herokuapp.com/register").then((response) => {
+  //     return response.json();
+  //   })
+  //       .then((data) => {
+  //         // setUsernames(data);
+  //         // usernames.toString(data)
+  //         // setPasswords(data);
+  //         // passwords.toString(data);
+  //         setids(data);
+  //         // localStorage.setUsername("username", data);
+  //         // localStorage.setPassword("password", data);
+  //         console.log(data);
+  //       });
+  // };
   // const [role, setRole] = useState("");
   // //
   // const handleChange = (role) => {
@@ -103,6 +122,7 @@ export default function Register() {
                       onChange={(e) => setPassword(e.target.value)}
                   />
                 </GridItem>
+
               </GridContainer>
             </CardBody>
 
@@ -116,7 +136,6 @@ export default function Register() {
                     id="instructor"
                     // onChange={handleChange}
                     name="role"
-
                 />
 
                 <label htmlFor="student">Student</label>
@@ -133,7 +152,10 @@ export default function Register() {
             </CardFooter>
 
             <CardFooter>
+
+
               <Button onClick={registerUser} color="danger">Register</Button>
+
             </CardFooter>
           </Card>
         </GridItem>
