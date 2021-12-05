@@ -46,66 +46,13 @@ export default function Dashboard() {
     <div>
 
       <GridContainer>
-        <GridItem xs={12} sm={12} md={6}>
-          <CustomTabs
-            title="Tasks:"
-            headerColor="danger"
-            tabs={[
-              {
-                tabName: "Assignments",
-                tabIcon: Assignment,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[0, 3]}
-                    tasksIndexes={[0, 1, 2, 3]}
-                    tasks={bugs}
-                  />
-                ),
-              },
-              {
-                tabName: "Quizzes",
-                tabIcon: Book,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[0]}
-                    tasksIndexes={[0, 1]}
-                    tasks={website}
-                  />
-                ),
-              },
-              {
-                tabName: "Exams",
-                tabIcon: Description,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[1]}
-                    tasksIndexes={[0, 1, 2]}
-                    tasks={server}
-                  />
-                ),
-              },
-            ]}
-          />
-        </GridItem>
-        <GridItem xs={12} sm={12} md={6}>
-          <Card>
-            <CardHeader color="danger">
-              <h4 className={classes.cardTitleWhite}>Course Grades</h4>
-            </CardHeader>
-            <CardBody>
-              <Table
-                tableHeaderColor="warning"
-                tableHead={["ID", "Course", "Percentage", "Letter Grade"]}
-                tableData={[
-                  ["1", "Course 1", "98", "A+"],
-                  ["2", "Course 2", "85", "B"],
-                  ["3", "Course 3", "74", "C"],
-                  ["4", "Course 4", "86", "B+"],
-                ]}
-              />
-            </CardBody>
-          </Card>
-        </GridItem>
+            <img src="/material-dashboard-react/static/media/brainstorm logo no text.2aedc2a7.png"
+                 alt="logo"
+                 className="makeStyles-img-10"
+                 width={"50%"}
+                 display={"block"}
+            />
+
       </GridContainer>
     </div>
   );

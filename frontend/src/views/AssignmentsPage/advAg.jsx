@@ -103,7 +103,9 @@ export default function AdvAg() {
                             <p className={classes.cardCategoryWhite}>
                                 Click on an Assignment to see more details
                             </p>
-                            <button onClick={showAg} className={"createAg"}> course 1 </button>
+                            <button onClick={() => {updateAg()}}> All Assignments</button>
+                            <button onClick={() => showAg(4)} className={"createAnmt"}> Course 4 </button>
+                            <button onClick={() => showAg(5)} className={"createAnmt"}> Course 5 </button>
 
                         </CardHeader>
                         <CardBody>

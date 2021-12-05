@@ -67,9 +67,12 @@ export default function Register() {
   const [first_name, setFirst_Name] = useState('turd');
   const [last_name, setLast_Name] = useState('sandwich');
   const [email, setEmail] = useState('turdsandwich@poop.com');
-  const [role, setRole] = useState("INSTRUCTOR");
+  const [role, setRole] = useState('');
 
-
+  const buttonSetRole = (e) => {
+    console.log("we set our role as " + e)
+    setRole(e)
+  }
 
   const registerUser = (e) => {
     const user = {username, password, first_name, last_name, email, role};
@@ -79,8 +82,8 @@ export default function Register() {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(user)
     })
-
   }
+
 
   return (
       <div>
@@ -92,22 +95,26 @@ export default function Register() {
               </CardHeader>
               <CardBody>
                 <GridContainer>
-                  <GridItem xs={12} sm={12} md={3}>
-                    <CustomInput
+                  <GridItem xs={12} sm={12} md={10}>
+                    <label>Username</label>
+                  </GridItem>
+                  <GridItem xs={9} sm={9} md={10}>
+                    <input
                         labelText="Username"
                         id="username"
-                        formControlProps={{
-                          fullWidth: true,
-                        }}
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                     />
                   </GridItem>
-                  <GridItem xs={12} sm={12} md={6}>
-                    <CustomInput
+                  <GridItem xs={12} sm={12} md={10}>
+                    <label>Password</label>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={10}>
+                    <input
                         labelText="Password"
                         id="last-name"
-                        formControlProps={{
-                          fullWidth: true,
-                        }}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                   </GridItem>
 
@@ -115,34 +122,15 @@ export default function Register() {
               </CardBody>
 
               <CardFooter>
-                <form>
                   <label htmlFor="instructor">Instructor</label>
-
-                  <input
-
-                      type="text"
-                      required
-                      value={username}
-                      placeholder="enter a username"
-                      onChange={(e) => setUsername(e.target.value)}
-                  />
+                  <button onClick={() => buttonSetRole("INSTRUCTOR")}> Instructor </button>
 
                   <label htmlFor="student">Student</label>
-                  <input
-
-                      type="password"
-                      required
-                      value={password}
-                      placeholder="enter a password"
-                      onChange={(e) => setPassword(e.target.value)}
-                  />
-
-
-                </form>
+                  <button onClick={() => buttonSetRole("STUDENT")}> Student </button>
               </CardFooter>
 
               <CardFooter>
-                <Button color={"danger"}>Register</Button>
+                <Button onClick={() => registerUser()} color={"danger"}>Register</Button>
               </CardFooter>
             </Card>
           </GridItem>
