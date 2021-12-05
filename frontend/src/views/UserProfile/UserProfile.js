@@ -42,7 +42,7 @@ export default function UserProfile() {
           <Card>
             <CardHeader color="danger">
               <h4 className={classes.cardTitleWhite}>Hello {localStorage.getItem("1")}</h4>
-              <p className={classes.cardCategoryWhite}>Edit your profile</p>
+              <p className={classes.cardCategoryWhite}>Edit your Profile</p>
             </CardHeader>
             <CardBody>
               <GridContainer>

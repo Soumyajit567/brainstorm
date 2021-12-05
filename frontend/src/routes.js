@@ -70,7 +70,6 @@ const dashboardRoutes = [
     {
         path: "/Anmt",
         name: "Announcements",
-        courses: ["poop", "butt"],
         icon: Assignment,
         component: AdvAnmt,
         layout: "/admin",
