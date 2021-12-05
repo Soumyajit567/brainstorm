@@ -70,15 +70,17 @@ export default function AdvAg() {
         <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
                     <Card>
+                        <label htmlFor="Homework number">Homework Number</label>
                         <input
-                            type="text"
+                            type={"text"}
                             required
                             value={hwno}
                             placeholder="Enter Homework Number"
                             // onChange={(e) => setUsername(e.target.value)}
                         />
+                        <label htmlFor="Answer">Answer</label>
                         <textarea
-                            type = "text"
+                            type = {"text"}
                             required
                             value={answer}
                             // onChange={(e) => setDescription(e.target.value)}
