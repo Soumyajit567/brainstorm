@@ -26,6 +26,7 @@ import AdvAnmt from "./views/AnnouncementsPage/advAnmt";
 import AdvAg from "./views/AssignmentsPage/advAg"
 import advSearch from "./views/SearchPage/advSearch";
 import advChat from "./views/ChatPage/advChat";
+import advSubmit from "./views/AssignmentsPage/advSubmit";
 // core components/views for RTL layout
 import login from "./views/Login_Page/Login";
 import registration from "./views/Registration_Page/Register";
@@ -79,6 +80,13 @@ const dashboardRoutes = [
         courses: ["Software", "Engineering"],
         icon: Assignment,
         component: AdvAg,
+        layout: "/admin",
+    },
+    {
+        path: "/as",
+        name: "Submission",
+        icon: Assignment,
+        component: advSubmit,
         layout: "/admin",
     },
     {

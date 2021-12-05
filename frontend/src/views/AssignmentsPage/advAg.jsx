@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
+import  { Component } from "react";
+import { Router, Switch, Route } from "react-router-dom";
+import {Link} from "react-router-dom";
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import ATable from "components/Table/ATable"
+import ATable from "components/Table/ATable.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import NewAg from "./NewAg";
+import {render} from "react-dom";
+import Dashboard from "@material-ui/icons/Dashboard";
+import DashboardPage from "../Dashboard/Dashboard";
+import advSubmit from "./advSubmit";
+import Redirect from "react-router-dom";
 const styles = {
     cardCategoryWhite: {
         "&,& a,& a:hover,& a:focus": {
@@ -41,11 +50,29 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
+
+
+
 export default function AdvAg() {
     const classes = useStyles();
+    // const history = useHistory();
     const [ag, setAg] = useState(null);
     const [newAg, setNewAg] = useState(false);
     const [showNewAg, setShowNewAg] = useState(true);
+
+    // const submit = path => {
+    //     history.push(path);
+    // };
+
+   // function submit(){
+   //
+   //       return(
+   //         <div>
+   //             <Link to ="/advSubmit" exact component={advSubmit}></Link>
+   //         </div>
+   //       );
+   //
+   // }
 
     const updateAg = () => {
         setNewAg(s => !s);
@@ -82,7 +109,44 @@ export default function AdvAg() {
 
     const agData = ag && ag.map((ags) => [ags.title, ags.description]);
 
+    // const SubmitAg= event=>{
+    //     // render(){
+    //     //
+    //     // // return(
+    //     // //     <div>
+    //     // //         <Router>
+    //     // //
+    //     // //                 <Switch>
+    //     // //                     <Route path="/advSubmit" exact component={advSubmit}/>
+    //     // //                 </Switch>
+    //     // //
+    //     // //         </Router>
+    //     // //     </div>
+    //     // }
+    //
+    //
+    // }
 
+
+
+                return (
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={12}>
+                        {ag && (
+                            <Card>
+                                <CardHeader color="danger">
+                                    <h4 className={classes.cardTitleWhite}>Assignments List</h4>
+                                    <p className={classes.cardCategoryWhite}>
+                                        Click on an Assignment to see more details
+                                    </p>
+                                    <button onClick={showAg} className={"createAg"}> course 1 </button>
+
+                                </CardHeader>
+                                <CardBody>
+                                    <ATable
+                                        tableHeaderColor="primary"
+                                        tableHead={["Title", "Content"]}
+                                        tableData={agData}
 
     return (
         <GridContainer>
@@ -133,6 +197,7 @@ export default function AdvAg() {
     );
 }
 
-/*
-"https:brainstormbackend.herokuapp.com/course/anmt/5
- */
+
+
+
+
