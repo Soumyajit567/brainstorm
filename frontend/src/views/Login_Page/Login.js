@@ -43,11 +43,12 @@ export default function Login() {
   const handleSubmit = () => {
     // send the username and password to the server
     fetch(
-      "https://brainstormbackend.herokuapp.com/user/logintest/" +
+        "https://brainstormbackend.herokuapp.com/user/logintest/" +
         username +
         "/" +
         password
     )
+
       .then((response) => {
         return response.json();
       })
@@ -78,14 +79,13 @@ export default function Login() {
   // };
 
   return (
-    <div>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
-          <Card>
-            <CardHeader color="danger">
-              <h4 className={classes.cardTitleWhite}>Login</h4>
-            </CardHeader>
-
+      <div>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={8}>
+            <Card>
+              <CardHeader color="danger">
+                <h4 className={classes.cardTitleWhite}>Login</h4>
+              </CardHeader>
 
               <form>
                 <CardBody>
@@ -123,8 +123,9 @@ export default function Login() {
                   </GridItem>
                 </GridContainer>
               </CardBody>
+
               <CardFooter>
-                <Button onClick={handleSubmit}>Login</Button>
+                <Button onClick={handleSubmit} color={"danger"}>Login</Button>
               </CardFooter>
               </form>
           </Card>
