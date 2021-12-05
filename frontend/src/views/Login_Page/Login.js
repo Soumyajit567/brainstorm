@@ -59,21 +59,21 @@ export default function Login() {
     // send the username and password to the server
     console.log("use effect has occurred");
     fetch(
-      "https://brainstormbackend.herokuapp.com/user/logintest/" +
+        "https://brainstormbackend.herokuapp.com/user/logintest/" +
         username +
         "/" +
         password
     )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setUsername(data);
-        setPassword(data);
-        // localStorage.setUsername("username", data);
-        // localStorage.setPassword("password", data);
-        console.log(data);
-      });
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          setUsername(data);
+          setPassword(data);
+          // localStorage.setUsername("username", data);
+          // localStorage.setPassword("password", data);
+          console.log(data);
+        });
     // set the state of the user
 
     // store the user in localStorage
@@ -85,56 +85,63 @@ export default function Login() {
   // };
 
   return (
-    <div>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
-          <Card>
-            <CardHeader color="danger">
-              <h4 className={classes.cardTitleWhite}>Login</h4>
-            </CardHeader>
+      <div>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={8}>
+            <Card>
+              <CardHeader color="danger">
+                <h4 className={classes.cardTitleWhite}>Login</h4>
+              </CardHeader>
 
-            <CardBody>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={3}>
-                  <label htmlFor="username">Username: </label>
-                  <input
-                    // labelText="Username"
-                    // id="username"
-                    // formControlProps={{
-                    //   fullWidth: true,
-                    // }}
-                    type="text"
-                    required
-                    value={username}
-                    placeholder="enter a username"
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <label htmlFor="password">password: </label>
-                  <input
-                    // labelText="Password"
-                    // id="password"
-                    // formControlProps={{
-                    //   fullWidth: true,
-                    // }}
-                    type="password"
-                    required
-                    value={password}
-                    placeholder="enter a password"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </GridItem>
-              </GridContainer>
-            </CardBody>
+              <CardBody>
+                <GridContainer>
 
-            <CardFooter>
-              <Button onClick={handleSubmit}>Login</Button>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}></GridItem>
-      </GridContainer>
-    </div>
+                  <GridItem xs={12} sm={12} md={10}>
+                    <label htmlFor="username">Username: </label>
+                  </GridItem>
+                  <GridItem xs={9} sm={9} md={10}>
+                    <input
+                        // labelText="Username"
+                        // id="username"
+                        // formControlProps={{
+                        //   fullWidth: true,
+                        // }}
+                        type="text"
+                        required
+                        value={username}
+                        placeholder="enter a username"
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                  </GridItem>
+
+
+                  <GridItem xs={12} sm={12} md={10}>
+                    <label htmlFor="password">Password: </label>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={10}>
+                    <input
+                        // labelText="Password"
+                        // id="password"
+                        // formControlProps={{
+                        //   fullWidth: true,
+                        // }}
+                        type="password"
+                        required
+                        value={password}
+                        placeholder="enter a password"
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </GridItem>
+                </GridContainer>
+              </CardBody>
+
+              <CardFooter>
+                <Button onClick={handleSubmit}>Login</Button>
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}></GridItem>
+        </GridContainer>
+      </div>
   );
 }

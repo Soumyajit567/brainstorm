@@ -104,6 +104,7 @@ export default function AdvAg() {
                                 tableHead={["Title", "Content"]}
                                 tableData={agData}
 
+
                             />
                             <label htmlFor="username">Enter Assignment Number: </label>
                             <input

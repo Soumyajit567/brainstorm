@@ -71,27 +71,40 @@ export default function Register() {
                     }}
                   />
                 </GridItem>
+
               </GridContainer>
             </CardBody>
 
-            <form>
-              <input
-                type="radio"
-                value="instructor"
-                id="instructor"
-                // onChange={handleChange}
-                name="role"
-              />
-              <label htmlFor="instructor">Instructor</label>
-              <input
-                type="radio"
-                value="student"
-                id="student"
-                // onChange={handleChange}
-                name="role"
-              />
-              <label htmlFor="student">Student</label>
-            </form>
+            <CardFooter>
+              <form>
+                <label htmlFor="instructor">Instructor</label>
+
+                <input
+                    type="radio"
+                    value="instructor"
+                    id="instructor"
+                    // onChange={handleChange}
+                    name="role"
+                    formControlProps={{
+                      fullWidth: true,
+                    }}
+                />
+
+                <label htmlFor="student">Student</label>
+                <input
+                    type="radio"
+                    value="student"
+                    id="student"
+                    // onChange={handleChange}
+                    name="role"
+                    formControlProps={{
+                      fullWidth: true,
+                    }}
+                />
+
+
+              </form>
+            </CardFooter>
 
             <CardFooter>
               <Button color="danger">Register</Button>
