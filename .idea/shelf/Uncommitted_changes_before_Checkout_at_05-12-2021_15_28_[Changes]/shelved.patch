@@ -1,0 +1,170 @@
+Index: frontend/src/views/AssignmentsPage/advAg.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { useEffect, useState } from \"react\";\r\nimport { useHistory } from 'react-router-dom';\r\n// @material-ui/core components\r\nimport { makeStyles } from \"@material-ui/core/styles\";\r\n// core components\r\nimport  { Component } from \"react\";\r\nimport { Router, Switch, Route } from \"react-router-dom\";\r\nimport {Link} from \"react-router-dom\";\r\nimport GridItem from \"components/Grid/GridItem.js\";\r\nimport GridContainer from \"components/Grid/GridContainer.js\";\r\nimport ATable from \"components/Table/ATable.js\";\r\nimport Card from \"components/Card/Card.js\";\r\nimport CardHeader from \"components/Card/CardHeader.js\";\r\nimport CardBody from \"components/Card/CardBody.js\";\r\nimport NewAg from \"./NewAg\";\r\nimport {render} from \"react-dom\";\r\nimport Dashboard from \"@material-ui/icons/Dashboard\";\r\nimport DashboardPage from \"../Dashboard/Dashboard\";\r\nimport advSubmit from \"./advSubmit\";\r\nimport Redirect from \"react-router-dom\";\r\nconst styles = {\r\n    cardCategoryWhite: {\r\n        \"&,& a,& a:hover,& a:focus\": {\r\n            color: \"rgba(255,255,255,.62)\",\r\n            margin: \"0\",\r\n            fontSize: \"14px\",\r\n            marginTop: \"0\",\r\n            marginBottom: \"0\",\r\n        },\r\n        \"& a,& a:hover,& a:focus\": {\r\n            color: \"#FFFFFF\",\r\n        },\r\n    },\r\n    cardTitleWhite: {\r\n        color: \"#FFFFFF\",\r\n        marginTop: \"0px\",\r\n        minHeight: \"auto\",\r\n        fontWeight: \"300\",\r\n        fontFamily: \"'Roboto', 'Helvetica', 'Arial', sans-serif\",\r\n        marginBottom: \"3px\",\r\n        textDecoration: \"none\",\r\n        \"& small\": {\r\n            color: \"#777\",\r\n            fontSize: \"65%\",\r\n            fontWeight: \"400\",\r\n            lineHeight: \"1\",\r\n        },\r\n    },\r\n};\r\n\r\nconst useStyles = makeStyles(styles);\r\n\r\n\r\n\r\n\r\nexport default function AdvAg() {\r\n    const classes = useStyles();\r\n    // const history = useHistory();\r\n    const [ag, setAg] = useState(null);\r\n    const [newAg, setNewAg] = useState(false);\r\n    const [showNewAg, setShowNewAg] = useState(true);\r\n\r\n    // const submit = path => {\r\n    //     history.push(path);\r\n    // };\r\n\r\n   // function submit(){\r\n   //\r\n   //       return(\r\n   //         <div>\r\n   //             <Link to =\"/advSubmit\" exact component={advSubmit}></Link>\r\n   //         </div>\r\n   //       );\r\n   //\r\n   // }\r\n\r\n    const updateAg = () => {\r\n        setNewAg(true);\r\n    };\r\n\r\n    const displayNewAg = () => {\r\n        setShowNewAg(s => !s)\r\n    }\r\n\r\n    //fetches data on the first render\r\n    useEffect(() => {\r\n        console.log(\"use effect has occurred\");\r\n        fetch(\"https://brainstormbackend.herokuapp.com/asgmt/\")\r\n            .then((response) => {\r\n                return response.json();\r\n            })\r\n            .then((data) => {\r\n                console.log(data);\r\n                setAg(data);\r\n            });\r\n    }, [newAg]);\r\n\r\n    const showAg = () => {\r\n        console.log(\"use effect has occurred\");\r\n        fetch(\"https://brainstormbackend.herokuapp.com/asgmt/1\")\r\n            .then((response) => {\r\n                return response.json();\r\n            })\r\n            .then((data) => {\r\n                console.log(data);\r\n                setAg(data);\r\n            });\r\n    }\r\n\r\n    const agData =\r\n        ag && ag.map((ags) => [ags.title, ags.description]);\r\n\r\n    // const SubmitAg= event=>{\r\n    //     // render(){\r\n    //     //\r\n    //     // // return(\r\n    //     // //     <div>\r\n    //     // //         <Router>\r\n    //     // //\r\n    //     // //                 <Switch>\r\n    //     // //                     <Route path=\"/advSubmit\" exact component={advSubmit}/>\r\n    //     // //                 </Switch>\r\n    //     // //\r\n    //     // //         </Router>\r\n    //     // //     </div>\r\n    //     // }\r\n    //\r\n    //\r\n    // }\r\n\r\n\r\n\r\n                return (\r\n                <GridContainer>\r\n                    <GridItem xs={12} sm={12} md={12}>\r\n                        {ag && (\r\n                            <Card>\r\n                                <CardHeader color=\"danger\">\r\n                                    <h4 className={classes.cardTitleWhite}>Assignments List</h4>\r\n                                    <p className={classes.cardCategoryWhite}>\r\n                                        Click on an Assignment to see more details\r\n                                    </p>\r\n                                    <button onClick={showAg} className={\"createAg\"}> course 1 </button>\r\n\r\n                                </CardHeader>\r\n                                <CardBody>\r\n                                    <ATable\r\n                                        tableHeaderColor=\"primary\"\r\n                                        tableHead={[\"Title\", \"Content\"]}\r\n                                        tableData={agData}\r\n\r\n\r\n                                    />\r\n                                    {/*<label htmlFor=\"username\">Enter Assignment Number: </label>*/}\r\n                                    {/*<input*/}\r\n                                    {/*    // labelText=\"Username\"*/}\r\n                                    {/*    // id=\"username\"*/}\r\n                                    {/*    // formControlProps={{*/}\r\n                                    {/*    //   fullWidth: true,*/}\r\n                                    {/*    // }}*/}\r\n                                    {/*    type=\"text\"*/}\r\n                                    {/*    required*/}\r\n                                    {/*    // value={username}*/}\r\n                                    {/*    placeholder=\"Enter Homework Number\"*/}\r\n                                    {/*    // onChange={(e) => setUsername(e.target.value)}*/}\r\n                                    {/*/>*/}\r\n                                    {/*<label>Write Answer : </label>*/}\r\n                                    {/*<input type=\"textarea\"*/}\r\n                                    {/*       name=\"textValue\"*/}\r\n                                    {/*    // onChange={this.handleChange}*/}\r\n                                    {/*/>*/}\r\n\r\n\r\n                                </CardBody>\r\n                            </Card>\r\n\r\n                        )}\r\n                        {/*<button onClick={submit()}>Submit</button>*/}\r\n                        <button onClick={() => displayNewAg()}>\r\n                            New Assignment\r\n                        </button>\r\n                        {showNewAg ? (\r\n                            console.log(\"newAg is hidden!\")\r\n                        ) : (\r\n                            <NewAg newAg={newAg} setNewAg={setNewAg} />\r\n                        )}\r\n                    </GridItem>\r\n                </GridContainer>\r\n                );\r\n}\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/views/AssignmentsPage/advAg.jsx b/frontend/src/views/AssignmentsPage/advAg.jsx
+--- a/frontend/src/views/AssignmentsPage/advAg.jsx	
++++ b/frontend/src/views/AssignmentsPage/advAg.jsx	
+@@ -64,15 +64,15 @@
+     //     history.push(path);
+     // };
+ 
+-   // function submit(){
+-   //
+-   //       return(
+-   //         <div>
+-   //             <Link to ="/advSubmit" exact component={advSubmit}></Link>
+-   //         </div>
+-   //       );
+-   //
+-   // }
++    // function submit(){
++    //
++    //       return(
++    //         <div>
++    //             <Link to ="/advSubmit" exact component={advSubmit}></Link>
++    //         </div>
++    //       );
++    //
++    // }
+ 
+     const updateAg = () => {
+         setNewAg(true);
+@@ -130,66 +130,61 @@
+ 
+ 
+ 
+-                return (
+-                <GridContainer>
+-                    <GridItem xs={12} sm={12} md={12}>
+-                        {ag && (
+-                            <Card>
+-                                <CardHeader color="danger">
+-                                    <h4 className={classes.cardTitleWhite}>Assignments List</h4>
+-                                    <p className={classes.cardCategoryWhite}>
+-                                        Click on an Assignment to see more details
+-                                    </p>
+-                                    <button onClick={showAg} className={"createAg"}> course 1 </button>
++    return (
++        <GridContainer>
++            <GridItem xs={12} sm={12} md={12}>
++                {ag && (
++                    <Card>
++                        <CardHeader color="danger">
++                            <h4 className={classes.cardTitleWhite}>Assignments List</h4>
++                            <p className={classes.cardCategoryWhite}>
++                                Click on an Assignment to see more details
++                            </p>
++                            <button onClick={showAg} className={"createAg"}> course 1 </button>
+ 
+-                                </CardHeader>
+-                                <CardBody>
+-                                    <ATable
+-                                        tableHeaderColor="primary"
+-                                        tableHead={["Title", "Content"]}
+-                                        tableData={agData}
++                        </CardHeader>
++                        <CardBody>
++                            <ATable
++                                tableHeaderColor="primary"
++                                tableHead={["Title", "Content"]}
++                                tableData={agData}
+ 
+ 
+-                                    />
+-                                    {/*<label htmlFor="username">Enter Assignment Number: </label>*/}
+-                                    {/*<input*/}
+-                                    {/*    // labelText="Username"*/}
+-                                    {/*    // id="username"*/}
+-                                    {/*    // formControlProps={{*/}
+-                                    {/*    //   fullWidth: true,*/}
+-                                    {/*    // }}*/}
+-                                    {/*    type="text"*/}
+-                                    {/*    required*/}
+-                                    {/*    // value={username}*/}
+-                                    {/*    placeholder="Enter Homework Number"*/}
+-                                    {/*    // onChange={(e) => setUsername(e.target.value)}*/}
+-                                    {/*/>*/}
+-                                    {/*<label>Write Answer : </label>*/}
+-                                    {/*<input type="textarea"*/}
+-                                    {/*       name="textValue"*/}
+-                                    {/*    // onChange={this.handleChange}*/}
+-                                    {/*/>*/}
++                            />
++                            {/*<label htmlFor="username">Enter Assignment Number: </label>*/}
++                            {/*<input*/}
++                            {/*    // labelText="Username"*/}
++                            {/*    // id="username"*/}
++                            {/*    // formControlProps={{*/}
++                            {/*    //   fullWidth: true,*/}
++                            {/*    // }}*/}
++                            {/*    type="text"*/}
++                            {/*    required*/}
++                            {/*    // value={username}*/}
++                            {/*    placeholder="Enter Homework Number"*/}
++                            {/*    // onChange={(e) => setUsername(e.target.value)}*/}
++                            {/*/>*/}
++                            {/*<label>Write Answer : </label>*/}
++                            {/*<input type="textarea"*/}
++                            {/*       name="textValue"*/}
++                            {/*    // onChange={this.handleChange}*/}
++                            {/*/>*/}
+ 
+ 
+-                                </CardBody>
+-                            </Card>
++                        </CardBody>
++                    </Card>
+ 
+-                        )}
+-                        {/*<button onClick={submit()}>Submit</button>*/}
+-                        <button onClick={() => displayNewAg()}>
+-                            New Assignment
+-                        </button>
+-                        {showNewAg ? (
+-                            console.log("newAg is hidden!")
+-                        ) : (
+-                            <NewAg newAg={newAg} setNewAg={setNewAg} />
+-                        )}
+-                    </GridItem>
+-                </GridContainer>
+-                );
+-}
+-
+-
+-
+-
+-
++                )}
++                {/*<button onClick={submit()}>Submit</button>*/}
++                <button onClick={() => displayNewAg()}>
++                    New Assignment
++                </button>
++                {showNewAg ? (
++                    console.log("newAg is hidden!")
++                ) : (
++                    <NewAg newAg={newAg} setNewAg={setNewAg} />
++                )}
++            </GridItem>
++        </GridContainer>
++    );
++}
+\ No newline at end of file
+Index: frontend/src/components/Table/ATable.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport PropTypes from \"prop-types\";\r\n// @material-ui/core components\r\nimport { makeStyles } from \"@material-ui/core/styles\";\r\nimport Table from \"@material-ui/core/Table\";\r\nimport TableHead from \"@material-ui/core/TableHead\";\r\nimport TableRow from \"@material-ui/core/TableRow\";\r\nimport TableBody from \"@material-ui/core/TableBody\";\r\nimport TableCell from \"@material-ui/core/TableCell\";\r\n// core components\r\nimport styles from \"assets/jss/material-dashboard-react/components/tableStyle.js\";\r\nimport {Link} from \"react-router-dom\";\r\nimport advSubmit from \"../../views/AssignmentsPage/advSubmit\";\r\nimport { Router, Switch, Route } from \"react-router-dom\";\r\nimport Button from \"components/CustomButtons/Button\"\r\n\r\nconst useStyles = makeStyles(styles);\r\n\r\nexport default function CustomTable(props) {\r\n    const classes = useStyles();\r\n    const { tableHead, tableData, tableHeaderColor } = props;\r\n    return (\r\n        <div className={classes.tableResponsive}>\r\n            <Table className={classes.table}>\r\n                {tableHead !== undefined ? (\r\n                    <TableHead className={classes[tableHeaderColor + \"TableHeader\"]}>\r\n                        <TableRow className={classes.tableHeadRow}>\r\n                            {tableHead.map((prop, key) => {\r\n                                return (\r\n                                    <TableCell\r\n                                        className={classes.tableCell + \" \" + classes.tableHeadCell}\r\n                                        key={key}\r\n                                    >\r\n                                        {prop}\r\n                                    </TableCell>\r\n                                );\r\n                            })}\r\n                        </TableRow>\r\n                    </TableHead>\r\n                ) : null}\r\n                <TableBody>\r\n                    {tableData.map((prop, key) => {\r\n                        return (\r\n                            <TableRow key={key} className={classes.tableBodyRow}>\r\n                                {prop.map((prop, key) => {\r\n                                    return (\r\n                                        <TableCell className={classes.tableCell} key={key}>\r\n                                            {prop}\r\n                                        </TableCell>\r\n                                    );\r\n                                })}\r\n                                <Button href=\"/admin/as\"> Submit </Button>\r\n\r\n\r\n\r\n\r\n                            </TableRow>\r\n                        );\r\n                    })}\r\n                </TableBody>\r\n            </Table>\r\n        </div>\r\n    );\r\n}\r\n\r\nCustomTable.defaultProps = {\r\n    tableHeaderColor: \"gray\",\r\n};\r\n\r\nCustomTable.propTypes = {\r\n    tableHeaderColor: PropTypes.oneOf([\r\n        \"warning\",\r\n        \"primary\",\r\n        \"danger\",\r\n        \"success\",\r\n        \"info\",\r\n        \"rose\",\r\n        \"gray\",\r\n    ]),\r\n    tableHead: PropTypes.arrayOf(PropTypes.string),\r\n    tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),\r\n};\r\n
+===================================================================
+diff --git a/frontend/src/components/Table/ATable.js b/frontend/src/components/Table/ATable.js
+--- a/frontend/src/components/Table/ATable.js	
++++ b/frontend/src/components/Table/ATable.js	
+@@ -79,4 +79,4 @@
+     ]),
+     tableHead: PropTypes.arrayOf(PropTypes.string),
+     tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+-};
++};
+\ No newline at end of file
