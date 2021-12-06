@@ -13,6 +13,9 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import axios from "axios";
 import {forEach} from "react-bootstrap/ElementChildren";
+import register from "../Registration_Page/Register";
+import {Link} from "react-router-dom";
+import * as path from "path";
 
 const styles = {
   cardCategoryWhite: {
@@ -136,6 +139,10 @@ export default function Login() {
 
               <CardFooter color = "Danger" >
                 <Button onClick={handleSubmit} color={"danger"}>Login</Button>
+
+              </CardFooter>
+              <CardFooter color = "Danger" >
+              <button href="/register"> Register </button>
               </CardFooter>
             </Card>
           </GridItem>

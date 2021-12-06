@@ -4,17 +4,17 @@ import { useState} from "react";
 const NewAg = (props) => {
 
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+    const [content, setContent] = useState('');
     const [course_id, setCourse_id] = useState('');
-    const [agDate, setAgDate] = useState("2021-11-14T00:00:00")
+
 
 
     //creates a new announcement
     const createAg = (e) => {
         e.preventDefault();
-        const ag = {title, description, course_id, agDate};
+        const ag = {title, content};
         console.log("posting a new announcement")
-        fetch('https://brainstormbackend.herokuapp.com/course/anmt/' + ag.course_id, {
+        fetch('https://brainstormbackend.herokuapp.com/course/asgmts/' + ag.course_id, {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(ag)
@@ -39,8 +39,8 @@ const NewAg = (props) => {
                 <label className={"agInputs"}> Assignment Content: </label>
                 <textarea
                     required
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
                 />
                 <label className={"agInputs"}> Assignment Course ID: </label>
                 <input

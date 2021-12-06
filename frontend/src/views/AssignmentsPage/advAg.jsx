@@ -58,6 +58,7 @@ export default function AdvAg() {
     const [ag, setAg] = useState(null);
     const [newAg, setNewAg] = useState(false);
     const [showNewAg, setShowNewAg] = useState(true);
+    const [course_id, setCourse_id] = useState('');
 
     const updateAg = () => {
         setNewAg(s => !s);
@@ -70,7 +71,7 @@ export default function AdvAg() {
     //fetches data on the first render
     useEffect(() => {
         console.log("use effect has occurred");
-        fetch("https://brainstormbackend.herokuapp.com/asgmt/")
+        fetch("https://brainstormbackend.herokuapp.com/asgmts/" + course_id)
             .then((response) => {
                 return response.json();
             })
@@ -92,7 +93,7 @@ export default function AdvAg() {
             });
     }
 
-    const agData = ag && ag.map((ags) => [ags.title, ags.description]);
+    const agData = ag && ag.map((ags) => [ags.title, ags.content]);
     return (
         <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
@@ -104,8 +105,8 @@ export default function AdvAg() {
                                 Click on an Assignment to see more details
                             </p>
                             <button onClick={() => {updateAg()}}> All Assignments</button>
-                            <button onClick={() => showAg(4)} className={"createAnmt"}> Course 4 </button>
-                            <button onClick={() => showAg(5)} className={"createAnmt"}> Course 5 </button>
+                            <button onClick={() => showAg(4)} className={"createAg"}> Course 4 </button>
+                            <button onClick={() => showAg(5)} className={"createAg"}> Course 5 </button>
 
                         </CardHeader>
                         <CardBody>
