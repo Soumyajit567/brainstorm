@@ -64,9 +64,9 @@ export default function Register() {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [first_name, setFirst_Name] = useState('turd');
-  const [last_name, setLast_Name] = useState('sandwich');
-  const [email, setEmail] = useState('turdsandwich@poop.com');
+  const [first_name, setFirst_Name] = useState('first');
+  const [last_name, setLast_Name] = useState('last');
+  const [email, setEmail] = useState('email@email.com');
   const [role, setRole] = useState('');
 
   const buttonSetRole = (e) => {
