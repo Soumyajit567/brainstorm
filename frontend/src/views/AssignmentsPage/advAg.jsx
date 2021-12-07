@@ -71,7 +71,7 @@ export default function AdvAg() {
     //fetches data on the first render
     useEffect(() => {
         console.log("use effect has occurred");
-        fetch("https://brainstormbackend.herokuapp.com/asgmts/" + course_id)
+        fetch("https://brainstormbackend.herokuapp.com/asgmt/")
             .then((response) => {
                 return response.json();
             })
@@ -112,7 +112,7 @@ export default function AdvAg() {
                         <CardBody>
                             <ATable
                                 tableHeaderColor="primary"
-                                tableHead={["Title", "Content"]}
+                                tableHead={["Title", "Description"]}
                                 tableData={agData}
 
 
