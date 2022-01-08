@@ -15,7 +15,7 @@ const NewAg = (props) => {
         const total_points = 50
         // const due_date = '2021-11-22'
         const ag = {title, description, course_id,total_points,due_date};
-        console.log("posting a new announceme")
+        console.log("posting a new assignment");
         console.log(ag);
         fetch('https://brainstormbackend.herokuapp.com/course/asgmts/' +ag.course_id,  {
             method: 'POST',
