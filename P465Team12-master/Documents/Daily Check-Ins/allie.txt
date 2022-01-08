@@ -1,0 +1,10 @@
+10/20
+Done: meeting with professor and communication regarding the team
+In-progress: JIRA tickets need to be done tonight so I'm going to look at what the others have already done and try to fill in my part, specifically database tickets. Also might rework some things in the database such as reset tokens.
+Blockers: Other classes, personal things, etc. Not much that can be helped.
+
+10/21
+Done: Nothing yesterday. Other work kept me booked... as always, it feels.
+In-progress: everything from yesterday. No large deadlines tonight so hoping I can now play catch up with this class.
+Blockers: The usual at this point. Nothing that can be helped.
+
